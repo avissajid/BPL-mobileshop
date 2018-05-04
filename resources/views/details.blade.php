@@ -1,3 +1,5 @@
+
+
 @extends('master')
 
   @section('content')
@@ -26,6 +28,7 @@
     </div>
     
   </div>
+
   <div id="DIV_15">
     
    
@@ -34,41 +37,44 @@
              
                       <?php echo ($data->details) ?>
      
-     
     </div>
+
     <div id="DIV_59">
       <div id="DIV_60">
         <div id="DIV_61">
         </div>
         <div id="DIV_62">
-          <img src= "{{asset('images') . '/'.$data->image}}"  >
+          <img src= "{{asset('images') . '/'. $data->image}}"  >
          
         </div>
         <div id="DIV_64">
           <div id="DIV_65">
-            <img src="https://assets.mspcdn.net/t_c-desktop-normal,f_auto,q_auto,d_c:noimage.jpg/c/12867-82-1.jpg" alt="Samsung Galaxy S9" id="IMG_66" />
+             <img src= "{{asset('images') . '/'.$data->image1}}"  >
           </div>
           <div id="DIV_67">
-            <img src="https://assets.mspcdn.net/t_c-desktop-normal,f_auto,q_auto,d_c:noimage.jpg/c/12867-82-2.jpg" alt="Samsung Galaxy S9" id="IMG_68" />
+            <img src="{{asset('images') . '/'. $data->image2}}">
           </div>
           <div id="DIV_69">
-            <img src="https://assets.mspcdn.net/t_c-desktop-normal,f_auto,q_auto,d_c:noimage.jpg/c/12867-82-3.jpg" alt="Samsung Galaxy S9" id="IMG_70" />
+            <img src="{{asset('images') . '/' . $data->image3}}">
           </div>
           <div id="DIV_71">
-            <img src="https://assets.mspcdn.net/t_c-desktop-normal,f_auto,q_auto,d_c:noimage.jpg/c/12867-82-4.jpg" alt="Samsung Galaxy S9" id="IMG_72" />
+           <img src="{{asset('images') . '/' . $data->image4}}">
           </div>
+
           <div id="DIV_73">
             <img src="https://assets.mspcdn.net/t_c-desktop-normal,f_auto,q_auto,d_c:noimage.jpg/c/12867-82-5.jpg" alt="Samsung Galaxy S9" id="IMG_74" />
           </div>
           <div id="DIV_75">
-            <a><img src="https://img.youtube.com/vi/u2P7mkMLXy0/0.jpg" alt="Samsung Galaxy S9" id="IMG_76" />https://www.youtube.com/watch?v=5ixc2E7W-ec <span id="SPAN_77">Video</span></a>
+            <img src="https://img.youtube.com/vi/u2P7mkMLXy0/0.jpg" alt="Samsung Galaxy S9" id="IMG_76" /> <span id="SPAN_77">Video</span>
           </div>
-        </div>
+        
       </div>
+    </div>
+    
       <div id="DIV_78">
         <div id="DIV_79">
           <div id="DIV_80">
-             <span id="SPAN_81">Best Price:</span> <span id="SPAN_82">Rs:</span> <span id="SPAN_83"></span>
+             <span id="SPAN_81">Best Price:</span> <span id="SPAN_82">Rs:<?php echo ($data->price) ?></span> <span id="SPAN_83"></span>
           </div>
           <div id="DIV_84">
             <div id="DIV_85">
@@ -105,7 +111,7 @@
             <div id="DIV_102">
               <div id="DIV_103">
                 <div id="DIV_104">
-                  SIZES
+              SIZES:<?php echo ($data->Size) ?>
                 </div>
               </div>
               <div id="DIV_105">
@@ -173,28 +179,28 @@
             </h3>
             <ul id="UL_137">
               <li id="LI_138">
-                Exynos 9810 processor
+                <?php echo ($data->Variant) ?>
               </li>
               <li id="LI_139">
-                4GB RAM
+               <?php echo ($data->RAM) ?>
               </li>
               <li id="LI_140">
-                64GB internal storage
+                <?php echo ($data->Internal) ?>
               </li>
               <li id="LI_141">
-                3000 mAh battery
+               <?php echo ($data->Capacity) ?>
               </li>
               <li id="LI_142">
-                12 M.Pixels rear &amp; 8 M.Pixels selfie
+                <?php echo ($data->Primary) ?> &amp; <?php echo ($data->Front) ?>
               </li>
               <li id="LI_143">
-                5.8 inch screen
+               <?php echo ($data->Size) ?> inch screen
               </li>
               <li id="LI_144">
-                Dual SIM (Nano SIM)
+                <?php echo ($data->SIM) ?>
               </li>
               <li id="LI_145">
-                Android OS, v8.0 (Oreo)
+                <?php echo ($data->OS) ?>
               </li>
             </ul>
           </div>
@@ -238,7 +244,20 @@
           
            <div id="DIV_211">
               <h2 id="H2_212">
-                Samsung Galaxy S9 
+                  <?php 
+
+                              $productName=DB::table('categories')->where('id', '=', $data->cat_id)->get();
+                              echo $productName[0]->cat_name; 
+
+                        ?></a>
+
+
+                  <?php 
+
+                              $productName=DB::table('brands')->where('id', '=', $data->brand_id)->get();
+                              echo $productName[0]->brand_name; 
+
+                        ?></a> 
               </h2>
               <table id="TABLE_213">
                 <tbody id="TBODY_214">
@@ -300,7 +319,7 @@
                       Protection
                     </td>
                     <td id="TD_237">
-                      Corning Gorilla Glass 5
+                      <?php echo ($data->Protection) ?>
                     </td>
                   </tr>
                   <tr id="TR_238">
@@ -329,7 +348,7 @@
                       Weight
                     </td>
                     <td id="TD_251">
-                      <span id="SPAN_252">163 grams</span>
+                      <span id="SPAN_252"><?php echo ($data->Weight) ?></span>
                     </td>
                   </tr>
                   <tr id="TR_253">
@@ -342,7 +361,7 @@
                       Operating System
                     </td>
                     <td id="TD_257">
-                      Android OS, v8.0 (Oreo)
+                      <?php echo ($data->OS) ?>
                     </td>
                   </tr>
                   <tr id="TR_258">
@@ -371,7 +390,7 @@
                       Primary
                     </td>
                     <td id="TD_268">
-                      12 M.Pixels
+                      <?php echo ($data->Primary) ?>
                     </td>
                   </tr>
                   <tr id="TR_269">
@@ -379,7 +398,7 @@
                       Front
                     </td>
                     <td id="TD_271">
-                      8 M.Pixels
+                     <?php echo ($data->Front) ?>
                     </td>
                   </tr>
                   <tr id="TR_272">
@@ -387,7 +406,7 @@
                       Video
                     </td>
                     <td id="TD_274">
-                      2160p@60fps, 1080p@240fps
+                     <?php echo ($data->Video) ?>
                     </td>
                   </tr>
                   <tr id="TR_275">
@@ -400,7 +419,7 @@
                       Internal
                     </td>
                     <td id="TD_279">
-                      64GB
+                     <?php echo ($data->Internal) ?>
                     </td>
                   </tr>
                   <tr id="TR_280">
@@ -408,7 +427,7 @@
                       RAM
                     </td>
                     <td id="TD_282">
-                      4GB
+                      <?php echo ($data->RAM) ?>
                     </td>
                   </tr>
                   <tr id="TR_283">
@@ -416,7 +435,7 @@
                       Expandable
                     </td>
                     <td id="TD_285">
-                      MicroSD, 256GB
+                      <?php echo ($data->Expandable) ?>
                     </td>
                   </tr>
                   <tr id="TR_286">
@@ -429,7 +448,7 @@
                       Type
                     </td>
                     <td id="TD_290">
-                      Li-Ion
+                    <?php echo ($data->Type) ?>
                     </td>
                   </tr>
                   <tr id="TR_291">
@@ -437,7 +456,7 @@
                       Capacity
                     </td>
                     <td id="TD_293">
-                      3000 mAh
+                     <?php echo ($data->Capacity) ?>
                     </td>
                   </tr>
                   <tr id="TR_294">
@@ -458,17 +477,10 @@
                       Bluetooth
                     </td>
                     <td id="TD_301">
-                      v5.0 with A2DP
+                      <?php echo ($data->Bluetooth) ?>
                     </td>
                   </tr>
-                  <tr id="TR_302">
-                    <td id="TD_303">
-                      Wi-Fi
-                    </td>
-                    <td id="TD_304">
-                      Yes with dual-band, Wi-Fi Direct, hotspot
-                    </td>
-                  </tr>
+                
                   <tr id="TR_305">
                     <td id="TD_306">
                       3G
@@ -482,7 +494,7 @@
                       USB
                     </td>
                     <td id="TD_310">
-                      Type-C
+                      <?php echo ($data->USB) ?>
                     </td>
                   </tr>
                   <tr id="TR_311">
@@ -514,7 +526,7 @@
                       SIM Configuration
                     </td>
                     <td id="TD_322">
-                      Dual SIM (Nano SIM)
+                      <?php echo ($data->SIM) ?>
                     </td>
                   </tr>
                   <tr id="TR_323">
@@ -530,7 +542,7 @@
                       NFC Chipset
                     </td>
                     <td id="TD_328">
-                      Yes
+                      <?php echo ($data->NFC) ?>
                     </td>
                   </tr>
                   <tr id="TR_329">
@@ -551,7 +563,7 @@
                       Variant
                     </td>
                     <td id="TD_336">
-                      Exynos 9810
+                      <?php echo ($data->Variant) ?>
                     </td>
                   </tr>
                   <tr id="TR_337">
@@ -559,7 +571,7 @@
                       Architecture
                     </td>
                     <td id="TD_339">
-                      Cortex-A55
+                      <?php echo ($data->Architecture) ?>
                     </td>
                   </tr>
                   <tr id="TR_340">
@@ -567,7 +579,7 @@
                       No of Cores
                     </td>
                     <td id="TD_342">
-                      8 (Octa Core)
+                      <?php echo ($data->Cores) ?>
                     </td>
                   </tr>
                   <tr id="TR_343">
@@ -575,7 +587,7 @@
                       Make
                     </td>
                     <td id="TD_345">
-                      Samsung
+                      <?php echo ($data->Make) ?>
                     </td>
                   </tr>
                   <tr id="TR_346">
@@ -583,7 +595,7 @@
                       Frequency
                     </td>
                     <td id="TD_348">
-                      2.8 GHz (Quad Core) + 1.7 GHz (Quad Core)
+                      <?php echo ($data->Frequency) ?>
                     </td>
                   </tr>
                   <tr id="TR_349">
@@ -591,7 +603,7 @@
                       GPU
                     </td>
                     <td id="TD_351">
-                      Mali-G72 MP18
+                      <?php echo ($data->GPU) ?>
                     </td>
                   </tr>
                   <tr id="TR_352">
@@ -604,7 +616,7 @@
                       Proximity
                     </td>
                     <td id="TD_356">
-                      Yes
+                      <?php echo ($data->Proximity) ?>
                     </td>
                   </tr>
                   <tr id="TR_357">
@@ -662,7 +674,7 @@
                   </tr>
                 </tbody>
               </table>
-            </div>
+         </div></div>
           <div id="DIV_377">
               <div id="DIV_378">
                 <script id="SCRIPT_380">googletag.cmd.push(function() { googletag.display('div-gpt-above-tech-spec'); });
@@ -673,307 +685,15 @@
             </div>
          
          
-          <div id="DIV_739">
-                  <h2 id="H2_740">
-                    Samsung Galaxy S9 Price in India
-                  </h2>
-                  <div id="DIV_741">
-                    <div id="DIV_742">
-                      <div id="DIV_743">
-                        <div id="DIV_744">
-                          <div id="DIV_745">
-                            <div id="DIV_746">
-                            </div>
-                          </div>
-                          <div id="DIV_747">
-                            More details <span id="SPAN_748">»</span>
-                          </div>
-                          <div id="DIV_749">
-                            Offer(s)
-                          </div>
-                        </div>
-                        <div id="DIV_750">
-                          <div id="DIV_751">
-                            3-5 Days delivery
-                          </div>
-                          <div id="DIV_752">
-                            EMI: <span id="SPAN_753">Available</span>
-                          </div>
-                        </div>
-                        <div id="DIV_754">
-                          <div id="DIV_755">
-                             <span id="SPAN_756">₹57,900</span>
-                          </div>
-                          <div id="DIV_757">
-                             <span id="SPAN_758">Free</span> Shipping
-                          </div>
-                        </div>
-                        <div id="DIV_759">
-                          <a rel="nofollow" href="https://www.mysmartprice.com/out/sendtostore.php?mspid=12867&amp;access_point=desktop&amp;l1=c&amp;top_category=electronics&amp;category=mobile&amp;id=301651430&amp;store=flipkart" id="A_760"></a>
-                        </div>
-                      </div>
-                      <div id="DIV_761">
-                      </div>
-                    </div>
-                    <div id="DIV_762">
-                      <div id="DIV_763">
-                        <div id="DIV_764">
-                          <img src="https://assets.mspcdn.net/q_auto/logos/partners/samsungs9_store.png" alt="samsungs9" id="IMG_765" />
-                          <div id="DIV_766">
-                            More details <span id="SPAN_767">»</span>
-                          </div>
-                          <div id="DIV_768">
-                            Offer(s)
-                          </div>
-                        </div>
-                        <div id="DIV_769">
-                          <div id="DIV_770">
-                            3-4 Days delivery
-                          </div>
-                          <div id="DIV_771">
-                            EMI: <span id="SPAN_772">Available</span>
-                          </div>
-                        </div>
-                        <div id="DIV_773">
-                          <div id="DIV_774">
-                             <span id="SPAN_775">₹57,900</span>
-                          </div>
-                          <div id="DIV_776">
-                             <span id="SPAN_777">Free</span> Shipping
-                          </div>
-                        </div>
-                        <div id="DIV_778">
-                          <a rel="nofollow" href="https://www.mysmartprice.com/out/sendtostore.php?mspid=12867&amp;access_point=desktop&amp;l1=c&amp;top_category=electronics&amp;category=mobile&amp;id=301495601&amp;store=samsungs9" id="A_779"></a>
-                        </div>
-                      </div>
-                      <div id="DIV_780">
-                      </div>
-                    </div>
-                    <div id="DIV_781">
-                      <div id="DIV_782">
-                        <div id="DIV_783">
-                          <img src="https://assets.mspcdn.net/q_auto/logos/partners/croma_store.png" alt="croma" id="IMG_784" />
-                          <div id="DIV_785">
-                            More details <span id="SPAN_786">»</span>
-                          </div>
-                        </div>
-                        <div id="DIV_787">
-                          <div id="DIV_788">
-                            5-7 Days delivery
-                          </div>
-                          <div id="DIV_789">
-                            EMI: <span id="SPAN_790">Available</span>
-                          </div>
-                        </div>
-                        <div id="DIV_791">
-                          <div id="DIV_792">
-                             <span id="SPAN_793">₹57,900</span>
-                          </div>
-                          <div id="DIV_794">
-                             <span id="SPAN_795">Free</span> Shipping
-                          </div>
-                        </div>
-                        <div id="DIV_796">
-                          <a rel="nofollow" href="https://www.mysmartprice.com/out/sendtostore.php?mspid=12867&amp;access_point=desktop&amp;l1=c&amp;top_category=electronics&amp;category=mobile&amp;id=301670064&amp;store=croma" id="A_797"></a>
-                        </div>
-                      </div>
-                      <div id="DIV_798">
-                      </div>
-                    </div>
-                    <div id="DIV_799">
-                      <div id="DIV_800">
-                        <div id="DIV_801">
-                          <div id="DIV_802">
-                            <div id="DIV_803">
-                            </div>
-                          </div>
-                          <div id="DIV_804">
-                            More details <span id="SPAN_805">»</span>
-                          </div>
-                        </div>
-                        <div id="DIV_806">
-                          <div id="DIV_807">
-                            Out Of Stock
-                          </div>
-                          <form id="FORM_808">
-                            <div id="DIV_809">
-                              Please enter a valid email address
-                            </div>
-                            <input type="text" placeholder="Enter Your Email Address" id="INPUT_810" />
-                            <input type="submit" value="NOTIFY ME" id="INPUT_811" />
-                          </form>
-                          <div id="DIV_812">
-                            We will notify you when product becomes available.
-                          </div>
-                        </div>
-                        <div id="DIV_813">
-                          <div id="DIV_814">
-                             <span id="SPAN_815">₹55,900</span>
-                          </div>
-                          <div id="DIV_816">
-                             <span id="SPAN_817">Free</span> Shipping
-                          </div>
-                        </div>
-                        <div id="DIV_818">
-                          <a rel="nofollow" href="https://www.mysmartprice.com/out/sendtostore.php?mspid=12867&amp;access_point=desktop&amp;l1=c&amp;top_category=electronics&amp;category=mobile&amp;id=302472573&amp;store=amazon" id="A_819"></a>
-                        </div>
-                      </div>
-                      <div id="DIV_820">
-                      </div>
-                    </div>
-                  </div>
-                  <div id="DIV_821">
-                    Show More Stores
-                  </div>
-                </div>
-          <div id="DIV_822">
-                  <div id="DIV_823">
-                    <ul id="UL_824">
-                      <li id="LI_825">
-                        All prices in the above table are in Indian Rupees.
-                      </li>
-                      <li id="LI_826">
-                        Cashback will not be credited for purchases in Amazon.
-                      </li>
-                      <li id="LI_827">
-                        The <strong id="STRONG_828">latest price of Samsung Galaxy S9</strong> was obtained on 21st April 2018 15:05:50
-                      </li>
-                      <li id="LI_829">
-                        The Samsung Galaxy S9 is available in Croma, Flipkart, Samsungs9, Amazon
-                      </li>
-                      <li id="LI_830">
-                        The price is valid in all major cities of India including Bangalore, Hyderabad, Chennai, Mumbai, Delhi and Pune. Please check instructions at the specific stores for any deviation.
-                      </li>
-                      <li id="LI_831">
-                        Buy <strong id="STRONG_832">Samsung Galaxy S9</strong> online in India for the lowest price. You can also avail the options of Cash on Delivery (COD) and EMI on purchase of this product. Samsung Galaxy S9 is available in Black, Purple, Blue colours across various online stores in India.
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+        
           <div id="DIV_833">
                   <script id="SCRIPT_834">googletag.cmd.push(function() { googletag.display("div-gpt-ad-1486990827467-11"); });
                   </script>
                   <div id="DIV_835">
                     </div>
                 </div>
-          <div id="DIV_837">
-                    <div id="DIV_838">
-                      <div id="DIV_839">
-                        Price History
-                      </div>
-                    </div>
-                    <div id="DIV_840">
-                      <div id="DIV_841">
-                        <div id="DIV_842">
-                        </div>
-                        <div id="DIV_843">
-                          Loading…
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-          <div id="DIV_844">
-                    Samsung Galaxy S9 Price in India is Rs. 57,900 as on 21st April 2018 15:05:50
-                  </div>
-          <div id="DIV_845">
-                    <div id="DIV_846">
-                      <h3 id="H3_847">
-                        Popular Mobile Price Lists
-                      </h3>
-                    </div>
-                    <div id="DIV_848">
-                      <div id="DIV_849">
-                         <a href="/mobile/pricelist/nokia-mobile-price-list-in-india.html" id="A_850">Nokia Mobile Price List</a>
-                      </div>
-                      <div id="DIV_851">
-                         <a href="/mobile/pricelist/samsung-mobile-price-list-in-india.html" id="A_852">Samsung Mobile Price List</a>
-                      </div>
-                      <div id="DIV_853">
-                         <a href="/mobile/pricelist/micromax-mobile-price-list-in-india.html" id="A_854">Micromax Mobile Price List</a>
-                      </div>
-                      <div id="DIV_855">
-                         <a href="/mobile/pricelist/android-mobile-price-list-in-india.html" id="A_856">Android Phones in India</a>
-                      </div>
-                      <div id="DIV_857">
-                         <a href="/mobile/pricelist/sony-mobile-price-list-in-india.html" id="A_858">Sony Mobile Price List</a>
-                      </div>
-                      <div id="DIV_859">
-                         <a href="/mobile/pricelist/htc-mobile-price-list-in-india.html" id="A_860">HTC Mobiles</a>
-                      </div>
-                      <div id="DIV_861">
-                         <a href="/mobile/pricelist/karbonn-mobile-price-list-in-india.html" id="A_862">Karbonn Mobiles</a>
-                      </div>
-                      <div id="DIV_863">
-                         <a href="/mobile/pricelist/xiaomi-mobile-price-list-in-india.html" id="A_864">Mi Mobile Price</a>
-                      </div>
-                    </div>
-                  </div>
-          <div id="DIV_865">
-                    <div id="DIV_866">
-                      <h3 id="H3_867">
-                        Other Mobile Price Lists
-                      </h3>
-                    </div>
-                    <div id="DIV_868">
-                      <div id="DIV_869">
-                         <a href="/mobile/pricelist/lenovo-mobile-price-list-in-india.html" id="A_870">Lenovo Mobile Price</a>
-                      </div>
-                      <div id="DIV_871">
-                         <a href="/mobile/pricelist/vivo-mobile-price-list-in-india.html" id="A_872">Vivo Mobile Price</a>
-                      </div>
-                      <div id="DIV_873">
-                         <a href="/mobile/pricelist/oppo-mobile-price-list-in-india.html" id="A_874">Oppo Mobile Price</a>
-                      </div>
-                      <div id="DIV_875">
-                         <a href="/mobile/pricelist/lyf-mobile-price-list-in-india.html" id="A_876">Lyf Mobile Price</a>
-                      </div>
-                      <div id="DIV_877">
-                         <a href="/mobile/pricelist/lava-mobile-price-list-in-india.html" id="A_878">Lava Mobiles</a>
-                      </div>
-                      <div id="DIV_879">
-                         <a href="/mobile/pricelist/10-or-mobile-price-list-in-india.html" id="A_880">10 or Mobile Price</a>
-                      </div>
-                    </div>
-                  </div>
-          <div id="DIV_881">
-                    <div id="DIV_882">
-                      <h3 id="H3_883">
-                        Popular Mobiles
-                      </h3>
-                    </div>
-                    <div id="DIV_884">
-                      <div id="DIV_885">
-                         <a href="http://www.mysmartprice.com/mobile/xiaomi-redmi-y1-msp13671" id="A_886">Xiaomi Redmi Y1</a>
-                      </div>
-                      <div id="DIV_887">
-                         <a href="http://www.mysmartprice.com/mobile/oneplus-5t-msp13539" id="A_888">OnePlus 5T</a>
-                      </div>
-                      <div id="DIV_889">
-                         <a href="http://www.mysmartprice.com/mobile/xiaomi-redmi-5a-msp13376" id="A_890">Xiaomi Redmi 5A</a>
-                      </div>
-                      <div id="DIV_891">
-                         <a href="http://www.mysmartprice.com/mobile/apple-iphone-x-msp13396" id="A_892">Apple iPhone X</a>
-                      </div>
-                    </div>
-                  </div>
-          <div id="DIV_893">
-                    <div id="DIV_894">
-                      <h3 id="H3_895">
-                        Related PriceList
-                      </h3>
-                    </div>
-                    <div id="DIV_896">
-                      <div id="DIV_897">
-                         <a href="http://www.mysmartprice.com/mobile/pricelist/samsung-octa-core-mobiles-price-list-in-india.html" id="A_898">Samsung Octa Core Mobiles</a>
-                      </div>
-                      <div id="DIV_899">
-                         <a href="http://www.mysmartprice.com/mobile/pricelist/samsung-4g-mobile-price-list-in-india.html" id="A_900">Samsung 4G Mobiles</a>
-                      </div>
-                      <div id="DIV_901">
-                         <a href="http://www.mysmartprice.com/mobile/pricelist/samsung-4gb-ram-mobiles-in-india.html" id="A_902">Samsung 4GB RAM Mobiles</a>
-                      </div>
-                    </div>
-                  </div>
+         
+         
         </div>
       <div id="DIV_903">
                   <div id="DIV_904">
@@ -1001,9 +721,8 @@
                     </div>
                   </div>
                 </div>
-    </div>
-  </div>
-</div>
+    </div></div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -1011,4 +730,5 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
   </body>
 </html>
+
 @endsection
