@@ -32,14 +32,12 @@
 			</div>
 			<div class="form-group">
 				<label><h2>  Add Model </h2></label>
-				<input type="text" class="form-control" name="brand_name" placeholder="Enter Model_name name" style=" width:250px ">
+				<input type="text" class="form-control" name="brand_name" placeholder="Enter Model_name" style=" width:250px ">
 			</div>
 			
 			<button type="submit" class="btn btn-primary">Submit</button>
 		</form>
 	</center>
-	
-
 </body>
 </html> 
 

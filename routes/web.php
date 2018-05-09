@@ -138,3 +138,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/viewtable', 'AdminController@table')->name('viewtable');
+Route::get('delete/{id}','AdminController@delete')->name('delete');
+Route::get('update/{id}','AdminController@update')->name('update');
+Route::post('save/{id}','AdminController@saveUpatedData')->name('saveData');

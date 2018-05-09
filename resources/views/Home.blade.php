@@ -34,6 +34,7 @@
   <li><a href="{{url('/addproduct')}}">Add Product</a></li>
   <li><a href="{{url('/AddBrand')}}">Add Brand</a></li>
   <li><a href="{{url('/AddCategory')}}">Add Category</a></li>
+  <li><a href="{{url('/viewtable')}}">Show total inserted products</a></li>
 <li><a href="#about">About</a></li>
 
 </ul>
