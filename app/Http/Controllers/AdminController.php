@@ -28,9 +28,10 @@ class AdminController extends Controller
         
         
     }
-    public function saveUpatedData($id){
-      dd('dd');
+    public function saveUpatedData(){
+     
       $input = Input::except('_token');
+      
       product::where('id','=',$input['id'])->update($input);
       return Redirect::to('/viewtable');
 

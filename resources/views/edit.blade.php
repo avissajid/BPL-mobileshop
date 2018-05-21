@@ -57,8 +57,13 @@
                     <a href="{{url('AddBrand')}}"><button type="button" class="btn btn-info">add new model</button></a>
                  
             </div>
-            
-              
+            <div class="form-group">
+               
+               <div class="col-xs-9">
+                <input type="hidden" name="id" id="id" value="{{$data->id}}">
+                 
+               </div>
+              </div>
             <div class="form-group">
                <label class="control-label col-xs-3" for="price">Product Price:</label>
                <div class="col-xs-9">
@@ -73,11 +78,16 @@
                   <input type="text" class="form-control" id="details" name="details" placeholder="Enter Display Type" value="{{$data->details}}">
                </div>
             </div>
+             <div id="DIV_62">
+          <img src= "{{asset('images') . '/'. $data->image}}"  >
+         
+        </div>
             <div class="form-group">
                <label class="control-label col-xs-3" for="image">Product Image:</label>
                <div class="col-xs-9">
                   <label for="FormControlFile"></label>
-                  <input type="file" class="form-control-file" id="image" name="image">
+                  
+                  <input type="file" class="form-control-file" id="image" name="image" value="{{$data->image_path }}">
                </div>
             </div>
            <br>
@@ -143,12 +153,7 @@
                   <input type="text" class="form-control" id="price" name="Touchscreen_type" placeholder="Enter Product Touchscreen type" value="{{$data->Touchscreen_type}}">
                </div>
             </div>
-            <div class="form-group" style="padding-right: 100px;">
-               <label class="control-label col-xs-3" for="Color_Reproduction">Color Reproduction  </label>
-               <div class="col-xs-7">
-                <input type="hidden" name="Color_Reproduction" id="Color_Reproduction" value="{{$data->id}}">
-                  <input type="text" class="form-control" id="Color_Reproduction" name="Color_Reproduction  " placeholder="Enter Product Price" value="{{$data->Color_Reproduction}}">
-               </div>
+            
             </div>
             <div class="form-group" style="padding-right: 100px;">
                <label class="control-label col-xs-3" for="Screen_to_body_percentage">Screen to body percentage</label>
@@ -160,8 +165,8 @@
             <div class="form-group" style="padding-right: 100px;">
                <label class="control-label col-xs-3" for="price">Color_Reproduction</label>
                <div class="col-xs-7">
-                <input type="hidden" name="Screen_to_body_percentage" id="Screen_to_body_percentage" value="{{$data->id}}">
-                  <input type="text" class="form-control" id="price" name="Color_Reproduction" placeholder="Enter Product Color_Reproduction">
+                <input type="hidden" name="Color_Reproduction" id="Color_Reproduction" value="{{$data->id}}">
+                  <input type="text" class="form-control" id="Color_Reproduction" name="Color_Reproduction" placeholder="Enter Product Color_Reproduction" value="{{$data->Color_Reproduction}}">
                </div>
             </div>
            
@@ -220,8 +225,8 @@
                <label class="control-label col-xs-3" for="msg">real flash</label>
                <div class="col-xs-9">
 
-                  <input type="radio" name="realflash" value="yes"> yes<br>
-                  <input type="radio" name="realflash" value="no">no<br>
+                  <input type="radio" {{ $data->realflash === 'yes' ? 'checked' : '' }} name="realflash" value="yes"> yes<br>
+                  <input type="radio" {{ $data->realflash === 'no' ? 'checked' : '' }} name="realflash" value="no">no<br>
                </div>
             </div>
           </div>
@@ -229,8 +234,8 @@
              <div class="form-group">
                <label class="control-label col-xs-3" for="msg">Fingerprint sensor</label>
                <div class="col-xs-9">
-                  <input type="radio" name="Fingerprint_sensor" value="yes"> yes<br>
-                  <input type="radio" name="Fingerprint_sensor" value="no">no<br>
+                  <input type="radio" {{ $data->Fingerprint_sensor === 'yes' ? 'checked' : '' }} name="Fingerprint_sensor" value="yes" > yes<br>
+                  <input type="radio" {{ $data->Fingerprint_sensor === 'no' ? 'checked' : '' }} name="Fingerprint_sensor" value="no">no<br>
                </div>
             </div>
           </div>
@@ -319,8 +324,8 @@
               <div class="form-group">
                <label class="control-label col-xs-3" for="msg">Turbo Charge </label>
                <div class="col-xs-9">
-                  <input type="radio" name="Turbo" value="yes"> yes<br>
-                  <input type="radio" name="Turbo" value="no">no<br>
+                  <input type="radio" {{ $data->Turbo === 'yes' ? 'checked' : '' }} name="Turbo" value="yes"> yes<br>
+                  <input type="radio"{{ $data->Turbo === 'no' ? 'checked' : '' }} name="Turbo" value="no">no<br>
                </div>
             </div>
               <div>
@@ -350,8 +355,8 @@
              <div class="form-group">
                <label class="control-label col-xs-3" for="msg">3G</label>
                <div class="col-xs-9">
-                  <input type="radio" name="G3" value="yes"> yes<br>
-                  <input type="radio" name="G3" value="no">no<br>
+                  <input type="radio" {{ $data->G3 === 'yes' ? 'checked' : '' }} name="G3" value="yes"> yes<br>
+                  <input type="radio" {{ $data->G3 === 'no' ? 'checked' : '' }} name="G3" value="no">no<br>
                </div>
             </div>
           </div>
@@ -359,8 +364,8 @@
              <div class="form-group">
                <label class="control-label col-xs-3" for="msg">2G</label>
                <div class="col-xs-9">
-                  <input type="radio" name="G2" value="yes"> yes<br>
-                  <input type="radio" name="G2" value="no">no<br>
+                  <input type="radio" {{ $data->G2 === 'yes' ? 'checked' : '' }} name="G2" value="yes"> yes<br>
+                  <input type="radio" {{ $data->G2 === 'no' ? 'checked' : '' }}  name="G2" value="no">no<br>
                </div>
             </div>
           </div>
@@ -370,8 +375,8 @@
              <div class="form-group">
                <label class="control-label col-xs-3" for="msg">4G</label>
                <div class="col-xs-9">
-                  <input type="radio" name="G4" value="yes"> yes<br>
-                  <input type="radio" name="G4" value="no">no<br>
+                  <input type="radio" {{ $data->G4 === 'yes' ? 'checked' : '' }} name="G4" value="yes"> yes<br>
+                  <input type="radio" {{ $data->G4 === 'no' ? 'checked' : '' }} name="G4" value="no">no<br>
                </div>
             </div>
           </div>
@@ -381,8 +386,8 @@
              <div class="form-group">
                <label class="control-label col-xs-3" for="msg">GPS</label>
                <div class="col-xs-9">
-                  <input type="radio" name="GPS" value="yes"> yes<br>
-                  <input type="radio" name="GPS" value="no">no<br>
+                  <input type="radio" {{ $data->GPS === 'yes' ? 'checked' : '' }} name="GPS" value="yes"> yes<br>
+                  <input type="radio" {{ $data->GPS === 'no' ? 'checked' : '' }} name="GPS" value="no">no<br>
                </div>
             </div>
           </div>
@@ -390,8 +395,8 @@
              <div class="form-group">
                <label class="control-label col-xs-3" for="msg">NFC Chipset</label>
                <div class="col-xs-9">
-                  <input type="radio" name="NFC" value="yes"> yes<br>
-                  <input type="radio" name="NFC" value="no">no<br>
+                  <input type="radio" {{ $data->NFC === 'yes' ? 'checked' : '' }} name="NFC" value="yes"> yes<br>
+                  <input type="radio" {{ $data->NFC === 'no' ? 'checked' : '' }}name="NFC" value="no">no<br>
                </div>
             </div>
         </div>
@@ -400,8 +405,8 @@
              <div class="form-group">
                <label class="control-label col-xs-3" for="msg">USB</label>
                <div class="col-xs-9">
-                  <input type="radio" name="USB" value="yes"> yes<br>
-                  <input type="radio" name="USB" value="no">no<br>
+                  <input type="radio" {{ $data->USB === 'yes' ? 'checked' : '' }} name="USB" value="yes"> yes<br>
+                  <input type="radio"{{ $data->USB === 'no' ? 'checked' : '' }} name="USB" value="no">no<br>
                </div>
             </div>
       
@@ -465,8 +470,8 @@
              <div class="form-group">
                <label class="control-label col-xs-4" for="msg">Infrared</label>
                <div class="col-xs-8">
-                  <input type="radio" name="Infrared" value="yes"> yes<br>
-                  <input type="radio" name="Infrared" value="no">no<br>
+                  <input type="radio"{{ $data->Infrared === 'yes' ? 'checked' : '' }} name="Infrared" value="yes"> yes<br>
+                  <input type="radio" {{ $data->Infrared === 'no' ? 'checked' : '' }}  name="Infrared" value="no">no<br>
                </div>
             </div>
 
@@ -477,8 +482,8 @@
              <div class="form-group">
                <label class="control-label col-md-4" for="msg">Loudpeaker</label>
                <div class="col-md-8">
-                  <input type="radio" name="Loudpeaker" value="yes"> yes<br>
-                  <input type="radio" name="Loudpeaker" value="no">no<br>
+                  <input type="radio" {{ $data->Loudpeaker === 'yes' ? 'checked' : '' }} name="Loudpeaker" value="yes"> yes<br>
+                  <input type="radio"  {{ $data->Loudpeaker === 'no' ? 'checked' : '' }} name="Loudpeaker" value="no">no<br>
                </div>
             </div>
           </div>
@@ -487,8 +492,8 @@
              <div class="form-group">
                <label class="control-label col-xs-4" for="msg">HeadPHones</label>
                <div class="col-xs-8">
-                  <input type="radio" name="HeadPHones" value="yes"> yes<br>
-                  <input type="radio" name="HeadPHones" value="no">no<br>
+                  <input type="radio" {{ $data->HeadPHones === 'yes' ? 'checked' : '' }} name="HeadPHones" value="yes"> yes<br>
+                  <input type="radio" {{ $data->HeadPHones === 'no' ? 'checked' : '' }} name="HeadPHones" value="no">no<br>
                </div>
             </div>
           </div>
@@ -503,8 +508,8 @@
             <div class="form-group">
                <label class="control-label col-xs-3" for="msg">Ambient Light</label>
                <div class="col-xs-9">
-                  <input type="radio" name="Ambient_Light" value="yes"> yes<br>
-                  <input type="radio" name="Ambient_Light" value="no">no<br>
+                  <input type="radio" {{ $data->Ambient_Light === 'yes' ? 'checked' : '' }} name="Ambient_Light" value="yes"> yes<br>
+                  <input type="radio" {{ $data->Ambient_Light === 'no' ? 'checked' : '' }} name="Ambient_Light" value="no">no<br>
                </div>
             </div>
           </div>
@@ -513,8 +518,8 @@
              <div class="form-group">
                <label class="control-label col-xs-3" for="msg">Gyroscope</label>
                <div class="col-xs-9">
-                  <input type="radio" name="Gyroscope" value="yes"> yes<br>
-                  <input type="radio" name="Gyroscope" value="no">no<br>
+                  <input type="radio"{{ $data->Gyroscope === 'yes' ? 'checked' : '' }} name="Gyroscope" value="yes"> yes<br>
+                  <input type="radio" {{ $data->Gyroscope === 'no' ? 'checked' : '' }} name="Gyroscope" value="no">no<br>
                </div>
             </div>
           </div>
@@ -522,8 +527,8 @@
              <div class="form-group">
                <label class="control-label col-xs-3" for="msg">Accelerometer</label>
                <div class="col-xs-9">
-                  <input type="radio" name="Accelerometer" value="yes"> yes<br>
-                  <input type="radio" name="Accelerometer" value="no">no<br>
+                  <input type="radio" {{ $data->Accelerometer === 'yes' ? 'checked' : '' }} name="Accelerometer" value="yes"> yes<br>
+                  <input type="radio" {{ $data->Accelerometer === 'no' ? 'checked' : '' }}  name="Accelerometer" value="no">no<br>
                </div>
             </div>
           </div> 
@@ -533,8 +538,8 @@
              <div class="form-group">
                <label class="control-label col-xs-3" for="msg">Proximity</label>
                <div class="col-xs-9">
-                  <input type="radio" name="Proximity" value="yes"> yes<br>
-                  <input type="radio" name="Proximity" value="no">no<br>
+                  <input type="radio" {{ $data->Proximity === 'yes' ? 'checked' : '' }}  name="Proximity" value="yes"> yes<br>
+                  <input type="radio" {{ $data->Proximity === 'no' ? 'checked' : '' }}name="Proximity" value="no">no<br>
                </div>
             </div>
           </div>

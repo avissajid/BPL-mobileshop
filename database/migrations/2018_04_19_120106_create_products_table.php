@@ -82,12 +82,13 @@ class CreateProductsTable extends Migration
             $table->string('Pixel_Density');
 
             $table->string('Size');
+             $table->string('Color_Reproduction');
 
             $table->string('Resolution'); 
 
             $table->string('Screen_to_body_percentage');
 
-            $table->string('Color_Reproduction'); 
+            
             $table->unsignedInteger('brand_id');
 
             $table->foreign('brand_id')->references('id')->on('brands');
@@ -96,6 +97,9 @@ class CreateProductsTable extends Migration
              $table->unsignedInteger('cat_id');
 
              $table->foreign('cat_id')->references('id')->on('categories');
+             $table->timestamps();
+             
+             $table->foreign('image_id')->references('id')->on('photos');
              $table->timestamps();
         });
     }

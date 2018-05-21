@@ -38,35 +38,35 @@
                       <?php echo ($data->details) ?>
      
     </div>
-
+<?php $img=\App\photo::where('id','=',$data->image_id)->get(); ?>
     <div id="DIV_59">
       <div id="DIV_60">
         <div id="DIV_61">
         </div>
         <div id="DIV_62">
-          <img src= "{{asset('images') . '/'. $data->image}}"  >
+          @foreach($img as $pic)
+          <img id="mainImage" src= "{{asset('images') . '/'. $pic->image}}"  >
          
         </div>
         <div id="DIV_64">
           <div id="DIV_65">
-             <img src= "{{asset('images') . '/'.$data->image1}}"  >
+             <img src= "{{asset('images') . '/'.$pic->image1}}"  >
           </div>
           <div id="DIV_67">
-            <img src="{{asset('images') . '/'. $data->image2}}">
+            <img src="{{asset('images') . '/'. $pic->image2}}">
           </div>
           <div id="DIV_69">
-            <img src="{{asset('images') . '/' . $data->image3}}">
+            <img src="{{asset('images') . '/' . $pic->image3}}">
           </div>
           <div id="DIV_71">
-           <img src="{{asset('images') . '/' . $data->image4}}">
+           <img src="{{asset('images') . '/' . $pic->image4}}">
           </div>
-
+@endforeach
+          
           <div id="DIV_73">
-            <img src="https://assets.mspcdn.net/t_c-desktop-normal,f_auto,q_auto,d_c:noimage.jpg/c/12867-82-5.jpg" alt="Samsung Galaxy S9" id="IMG_74" />
-          </div>
-          <div id="DIV_75">
-            <img src="https://img.youtube.com/vi/u2P7mkMLXy0/0.jpg" alt="Samsung Galaxy S9" id="IMG_76" /> <span id="SPAN_77">Video</span>
-          </div>
+          <a href="https://www.youtube.com/watch?v=5_-NKRVn7IQ"> <img src="public\images\download.jpg"> Vidio </a>
+    
+                </div>
         
       </div>
     </div>
@@ -728,6 +728,32 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://www.mysmartprice.com/msp/js/jquery-ui-1.10.3.custom.pack.js?release=4bbcefbf3169d14c53c2c3901b633f77" defer=""></script>
+    <script type="text/javascript" src="https://www.mysmartprice.com/msp/js/jquery-ui-1.10.3.slider.js?release=d0383ea6bf671a74fa2b2ef5a960db48" defer=""></script>
+    <script type="text/javascript" src="https://www.mysmartprice.com/assets/js_modules/dist/modules-bundle.js?release=60f0051bf8d11143cff13a84ed42398b" defer=""></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.18/require.min.js" defer=""></script>
+ 
+    <script type="text/javascript">
+
+      $("#DIV_64 img").hover(function() {
+
+        var imageSrc=$(this).attr("src");
+          $("#mainImage").attr('src',imageSrc);
+      }, function() {
+    });
+
+    </script>
+     <script type="text/javascript">
+
+      $("#DIV_75 img").hover(function() {
+
+        var imageSrc=$(this).attr("src");
+          $("#mainImage").attr('src',imageSrc);
+      }, function() {
+    });
+
+    </script>
+
   </body>
 </html>
 

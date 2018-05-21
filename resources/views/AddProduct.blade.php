@@ -15,6 +15,7 @@
                ?>
 
 
+
    <div class="container">
       <div class="col-md-9">
          <h2 class="page-header" style="color:cadetblue">Add Product :</h2>
@@ -35,6 +36,7 @@
                   </select>
                </div>
             </div>
+
                    <div class="form-group" style="padding-left:700px">
             
                     <a href="{{url('AddCategory')}}"><button type="button" class="btn btn-info">Add new category</button></a>
@@ -71,12 +73,35 @@
                   <textarea class="form-control" rows="5" id="msg" name="details"></textarea>
                </div>
             </div>
-            <div class="form-group">
-               <label class="control-label col-xs-3" for="image">Product Image:</label>
+             <div class="form-group">
+               <label class="control-label col-xs-3  " for="brand">image:</label>
+               <div class="col-xs-9">
+                  <select class="form-control " id="image_id" name="image_id">
+                     <option selected disabled>Select the /option>
+                    
+                      <?php $pic =\App\photo::all() ?>
+                   
+                     @foreach($pic as $imag)
+                     <option value="{{$imag->id}}">{{$imag->img_name}}</option>
+                   @endforeach
+                  </select>
+               </div>
+            </div>
+             
+          
+               
+
+            
+            </div>
+          </div>
+          <div class="form-group">
+               <label class="control-label col-xs-3" for="image">image</label>
                <div class="col-xs-9">
                   <label for="FormControlFile"></label>
                   <input type="file" class="form-control-file" id="image" name="image">
                </div>
+            </div>
+           <br>
             </div>
            <br>
             

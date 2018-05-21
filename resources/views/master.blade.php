@@ -67,12 +67,48 @@
                   </div>
                </div>
                <div class="col-sm-3">
-                  <div class="hello1">Hello Customer - <a href="#">Login</a> or <a href="#">Register</a>
+                  <div class="hello1">  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Left Side Of Navbar -->
+                    <ul class="navbar-nav mr-auto">
+
+                    </ul>
+
+                    <!-- Right Side Of Navbar -->
+                    <ul class="navbar-nav ml-auto">
+                        <!-- Authentication Links -->
+                        @guest
+                            <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
+                            <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
+                        @else
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                            
+                        @endguest
+                    </ul>
+                </div>
+
                   </div>
                </div>
             </div>
          </div>
+         
       </div>
+
       <div class="top3_wrapper">
          <div class="container">
             <div class="top3 clearfix">
@@ -87,181 +123,9 @@
                      <ul class="nav navbar-nav sf-menu clearfix">
                         <li class="sub-menu sub-menu-1">
                            <a href="{{url('/show')}}">Home</a>
-                           <div class="sf-mega">
-                              <ul class="sf-mega-ul">
-                                 <li class="menu-item-container-text">
-                                    <div class="menu-item-title">iMac Computers</div>
-                                    <ul class="sf-mega-menu">
-                                       <li><a href="listing.html">Flip-Flops</a></li>
-                                       <li><a href="listing.html">Fashion Scarves</a></li>
-                                       <li><a href="listing.html">Wallets</a></li>
-                                       <li><a href="listing.html">Evening Handbags</a></li>
-                                       <li><a href="listing.html">Wrist Watches</a></li>
-                                    </ul>
-                                    <div class="menu-item-title">Makbooks</div>
-                                    <ul class="sf-mega-menu">
-                                       <li><a href="#">Flip-Flops</a></li>
-                                       <li><a href="#">Fashion Scarves</a></li>
-                                       <li><a href="#">Wallets</a></li>
-                                       <li><a href="#">Evening Handbags</a></li>
-                                       <li><a href="#">Wrist Watches</a></li>
-                                    </ul>
-                                 </li>
-                                 <li class="menu-item-container-text">
-                                    <div class="menu-item-title">Windows Computers</div>
-                                    <ul class="sf-mega-menu">
-                                       <li><a href="#">Flip-Flops</a></li>
-                                       <li><a href="#">Fashion Scarves</a></li>
-                                       <li><a href="#">Wallets</a></li>
-                                       <li><a href="#">Evening Handbags</a></li>
-                                       <li><a href="#">Wrist Watches</a></li>
-                                    </ul>
-                                    <div class="menu-item-title">Laptops</div>
-                                    <ul class="sf-mega-menu">
-                                       <li><a href="#">Flip-Flops</a></li>
-                                       <li><a href="#">Fashion Scarves</a></li>
-                                       <li><a href="#">Wallets</a></li>
-                                       <li><a href="#">Evening Handbags</a></li>
-                                       <li><a href="#">Wrist Watches</a></li>
-                                    </ul>
-                                 </li>
-                                 <li class="menu-item-container-image">
-                                    <div class="menu-item-image"><img src="{{asset('flextop/images/mega-menu-computer.jpg')}}" alt="" class="img-responsive"></div>
-                                 </li>
-                              </ul>
-                           </div>
+                          
                         </li>
-                        <li class="sub-menu sub-menu-1">
-                           <a href="listing.html">TV & Audios</a>
-                           <div class="sf-mega">
-                              <ul class="sf-mega-ul">
-                                 <li class="menu-item-container-text">
-                                    <div class="menu-item-title">TV Samsung</div>
-                                    <ul class="sf-mega-menu">
-                                       <li><a href="listing.html">Flip-Flops</a></li>
-                                       <li><a href="#">Fashion Scarves</a></li>
-                                       <li><a href="#">Wallets</a></li>
-                                       <li><a href="#">Evening Handbags</a></li>
-                                       <li><a href="#">Wrist Watches</a></li>
-                                    </ul>
-                                    <div class="menu-item-title">TV Philips</div>
-                                    <ul class="sf-mega-menu">
-                                       <li><a href="listing.html">Flip-Flops</a></li>
-                                       <li><a href="#">Fashion Scarves</a></li>
-                                       <li><a href="#">Wallets</a></li>
-                                       <li><a href="#">Evening Handbags</a></li>
-                                       <li><a href="#">Wrist Watches</a></li>
-                                    </ul>
-                                 </li>
-                                 <li class="menu-item-container-text">
-                                    <div class="menu-item-title">Lorem Audio</div>
-                                    <ul class="sf-mega-menu">
-                                       <li><a href="listing.html">Flip-Flops</a></li>
-                                       <li><a href="#">Fashion Scarves</a></li>
-                                       <li><a href="#">Wallets</a></li>
-                                       <li><a href="#">Evening Handbags</a></li>
-                                       <li><a href="#">Wrist Watches</a></li>
-                                    </ul>
-                                    <div class="menu-item-title">Lorem Sound Audio</div>
-                                    <ul class="sf-mega-menu">
-                                       <li><a href="listing.html">Flip-Flops</a></li>
-                                       <li><a href="#">Fashion Scarves</a></li>
-                                       <li><a href="#">Wallets</a></li>
-                                       <li><a href="#">Evening Handbags</a></li>
-                                       <li><a href="#">Wrist Watches</a></li>
-                                    </ul>
-                                 </li>
-                                 <li class="menu-item-container-image">
-                                    <div class="menu-item-image"><img src="{{asset('flextop/images/mega-menu-audio.jpg')}}" alt="" class="img-responsive"></div>
-                                 </li>
-                              </ul>
-                           </div>
-                        </li>
-                        <li><a href="{{url('/cart')}}">Shopping cart</a></li>
-                        <li><a href="{{url('/addproduct')}}">Add product</a></li>
-                        <li class="sub-menu sub-menu-1">
-                           <a href="listing.html">Accessories</a>
-                           <div class="sf-mega">
-                              <ul class="sf-mega-ul">
-                                 <li class="menu-item-container-text">
-                                    <div class="menu-item-title">TV Samsung</div>
-                                    <ul class="sf-mega-menu">
-                                       <li><a href="listing.html">Flip-Flops</a></li>
-                                       <li><a href="#">Fashion Scarves</a></li>
-                                       <li><a href="#">Wallets</a></li>
-                                       <li><a href="#">Evening Handbags</a></li>
-                                       <li><a href="#">Wrist Watches</a></li>
-                                    </ul>
-                                    <div class="menu-item-title">TV Philips</div>
-                                    <ul class="sf-mega-menu">
-                                       <li><a href="listing.html">Flip-Flops</a></li>
-                                       <li><a href="#">Fashion Scarves</a></li>
-                                       <li><a href="#">Wallets</a></li>
-                                       <li><a href="#">Evening Handbags</a></li>
-                                       <li><a href="#">Wrist Watches</a></li>
-                                    </ul>
-                                 </li>
-                                 <li class="menu-item-container-text">
-                                    <div class="menu-item-title">Lorem Audio</div>
-                                    <ul class="sf-mega-menu">
-                                       <li><a href="listing.html">Flip-Flops</a></li>
-                                       <li><a href="#">Fashion Scarves</a></li>
-                                       <li><a href="#">Wallets</a></li>
-                                       <li><a href="#">Evening Handbags</a></li>
-                                       <li><a href="#">Wrist Watches</a></li>
-                                    </ul>
-                                    <div class="menu-item-title">Lorem Sound Audio</div>
-                                    <ul class="sf-mega-menu">
-                                       <li><a href="listing.html">Flip-Flops</a></li>
-                                       <li><a href="#">Fashion Scarves</a></li>
-                                       <li><a href="#">Wallets</a></li>
-                                       <li><a href="#">Evening Handbags</a></li>
-                                       <li><a href="#">Wrist Watches</a></li>
-                                    </ul>
-                                 </li>
-                                 <li class="menu-item-container-image">
-                                    <div class="menu-item-image"><img src="{{asset('flextop/images/mega-menu01.jpg')}}" alt="" class="img-responsive"></div>
-                                 </li>
-                              </ul>
-                           </div>
-                        </li>
-                        <li class="sub-menu sub-menu-2">
-                           <a href="#">Pages <span class="caret"></span></a>
-                           <div class="sf-mega">
-                              <ul>
-                                 <li>
-                                    <a href="index-2.html">Home Page <i class="fa fa-caret-right gridgumright" aria-hidden="true"></i></a>
-                                    <div class="sf-mega">
-                                       <ul>
-                                          <li><a href="index-2.html">Home version 1</a></li>
-                                          <li><a href="index-3.html">Home version 2</a></li>
-                                          <li><a href="index-4.html">Home version 3</a></li>
-                                          <li><a href="index-5.html">Home version 4</a></li>
-                                       </ul>
-                                    </div>
-                                 </li>
-                                 <li><a href="listing.html">Product Listing Page</a></li>
-                                 <li><a href="product-details.html">Product Description Page</a></li>
-                                 <li><a href="shopping-cart.html">Shopping Cart</a></li>
-                                 <li><a href="checkout.html">Checkout Page</a></li>
-                                 <li>
-                                    <a href="blog.html">Blog <i class="fa fa-caret-right gridgumright" aria-hidden="true"></i></a>
-                                    <div class="sf-mega">
-                                       <ul>
-                                          <li><a href="blog.html">Blog Left Sidebar</a></li>
-                                          <li><a href="blog-right.html">Blog Right Sidebar</a></li>
-                                          <li><a href="post.html">Post Left Sidebar</a></li>
-                                          <li><a href="post-right.html">Post Right Sidebar</a></li>
-                                       </ul>
-                                    </div>
-                                 </li>
-                                 <li><a href="contact-us.html">Contact Us</a></li>
-                                 <li><a href="404.html">404 Page</a></li>
-                              </ul>
-                           </div>
-                        </li>
-                        <li><a href="contact-us.html">Contact us</a></li>
-                     </ul>
+                          </ul>
                   </div>
                </div>
             </div>
