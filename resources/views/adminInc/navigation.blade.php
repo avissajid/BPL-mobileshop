@@ -49,6 +49,9 @@
 									<li>
 										<a href="#">Add Model</a>
 									</li>
+									<li>
+										<a href="#">Home</a>
+									</li>
 								</ul>
 
 								<hr class="light-grey-hr ma-0"/>
@@ -78,7 +81,7 @@
 										<a href="product-orders.html">Orders</a>
 									</li>
 									<li>
-										<li>@extends('layouts.app')
+										<li>
 
 
 									</li>

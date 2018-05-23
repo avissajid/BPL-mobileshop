@@ -35,6 +35,9 @@
 				<li>
 					<a href="#">Cart</a>
 				</li>
+				<li>
+					<a href="{{url('/')}}">Home</a>
+				</li>
 			</ul>
 		</li>
 	</ul>

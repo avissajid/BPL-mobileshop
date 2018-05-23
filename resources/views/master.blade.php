@@ -122,7 +122,7 @@
                   <div class="navbar-collapse navbar-collapse_ collapse">
                      <ul class="nav navbar-nav sf-menu clearfix">
                         <li class="sub-menu sub-menu-1">
-                           <a href="{{url('/show')}}">Home</a>
+                           <a href="{{url('/')}}">Home</a>
                           
                         </li>
                           </ul>

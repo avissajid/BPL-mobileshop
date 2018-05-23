@@ -76,6 +76,10 @@ Route::post('/filter', 'MainController@filter');
 Route::get('/adminlogin', function () {
     return view('adminPanel.adminLogin');
 });
+
+Route::get('/adminSignup', function () {
+    return view('adminPanel.adminSignup');
+});
 Auth::routes();
 Route::get('/viewtable', 'AdminController@table')->name('viewtable');
 Route::get('delete/{id}', 'AdminController@delete')->name('delete');
@@ -94,10 +98,10 @@ Route::group(['middleware' => 'auth'], function() {
     })->name('home');
     Route::get('/dashboard', function(Request $request) {
         return view('adminPanel.dashboard');
-    })->name('dashboard')->middleware('checkPermissions');
+    })->name('dashboard')->middleware('CheckPermissions');
     Route::get('/addproduct', function(Request $request) {
         return view('addProduct');
-    })->name('dashboard')->middleware('checkPermissions');
+    })->name('dashboard')->middleware('CheckPermissions');
 });
 Route::get('/admindashboard', function () {
     return view('adminPanel.dashboard');
@@ -133,3 +137,4 @@ Route::get('products/{id}', 'MainController@showProductsWithCategory')->name('pr
 Route::get('/orders', function () {
     return view('adminPanel.order');
 });
+Route::post('processLogin', 'UserController@processLogin')->name('processLogin');

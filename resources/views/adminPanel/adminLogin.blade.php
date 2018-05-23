@@ -39,7 +39,7 @@
 				</div>
 				<div class="form-group mb-0 pull-right">
 					<span class="inline-block pr-10">Don't have an account?</span>
-					<a class="inline-block btn btn-info btn-rounded btn-outline" href="signup.html">Sign Up</a>
+					<a class="inline-block btn btn-info btn-rounded btn-outline" href="{{url('/adminSignup')}}">Sign Up</a>
 				</div>
 				<div class="clearfix"></div>
 			</header>

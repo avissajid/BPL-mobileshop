@@ -53,23 +53,21 @@
 											<h6 class="text-center nonecase-font txt-grey">Enter your details below</h6>
 										</div>	
 										<div class="form-wrap">
-											<form action="#">
+											<form action="{{url('/processLogin')}}" method="POST" >
+												{{ csrf_field() }}
 												<div class="form-group">
-													<label class="control-label mb-10" for="exampleInputName_1">Username</label>
-													<input type="email" class="form-control" required="" id="exampleInputName_1" placeholder="Username">
+													<label class="control-label mb-10" for="name">Username</label>
+													<input type="name" class="form-control" required="" id="name" name="name" placeholder="Username">
 												</div>
 												<div class="form-group">
 													<label class="control-label mb-10" for="exampleInputEmail_2">Email address</label>
-													<input type="email" class="form-control" required="" id="exampleInputEmail_2" placeholder="Enter e-mail">
+													<input type="email" class="form-control" required="" id="email" name="email" placeholder="Enter e-mail">
 												</div>
 												<div class="form-group">
 													<label class="pull-left control-label mb-10" for="exampleInputpwd_2">Password</label>
-													<input type="password" class="form-control" required="" id="exampleInputpwd_2" placeholder="Enter password">
+													<input type="password" class="form-control" required="" name="password" id="password" placeholder="Enter password">
 												</div>
-												<div class="form-group">
-													<label class="pull-left control-label mb-10" for="exampleInputpwd_3">Confirm Password</label>
-													<input type="password" class="form-control" required="" id="exampleInputpwd_3" placeholder="Enter password">
-												</div>
+												
 												<div class="form-group text-center">
 													<button type="submit" class="btn btn-info btn-rounded">Sign Up</button>
 												</div>
