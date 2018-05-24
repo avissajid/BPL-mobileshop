@@ -27,7 +27,15 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-
+    public static $signup_rules = [
+    'email' => 'required|unique:users',
+    'password' => 'required',
+    'name' => 'required',
+    ];
+    public static $login_rules = [
+    'email' => 'required',
+    'password' => 'required',
+    ];
     public function is_admin()
     {
         if($this->admin)

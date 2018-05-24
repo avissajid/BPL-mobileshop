@@ -1,19 +1,14 @@
-<!DOCTYPE html>
+	<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 		<title>Sign-Up I Mobile Touch</title>
-
 		<!-- Favicon -->
 		<link rel="shortcut icon" href="favicon.ico">
 		<link rel="icon" href="favicon.ico" type="image/x-icon">
-		
 		<!-- vector map CSS -->
 		<link href="{{asset('adminpanel/vendors/bower_components/jasny-bootstrap/dist/css/jasny-bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
-		
-		
-		
 		<!-- Custom CSS -->
 		<link href="{{asset('adminpanel/dist/css/style.css')}}" rel="stylesheet" type="text/css">
 	</head>
@@ -53,7 +48,18 @@
 											<h6 class="text-center nonecase-font txt-grey">Enter your details below</h6>
 										</div>	
 										<div class="form-wrap">
-											<form action="{{url('/processLogin')}}" method="POST" >
+
+										@if(Session::has('error_message'))
+										<div class="alert alert-danger">
+										<strong>Error!</strong> {{Session::get('error_message')}}
+										</div>
+										@endif
+										@if(Session::has('success_message'))
+										<div class="alert alert-success">
+										<strong>Success!</strong> {{Session::get('success_message')}}
+										</div>	
+										@endif
+											<form action="{{url('/processSignup')}}" method="POST" >
 												{{ csrf_field() }}
 												<div class="form-group">
 													<label class="control-label mb-10" for="name">Username</label>

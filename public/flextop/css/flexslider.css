@@ -1,7 +1,7 @@
 html[xmlns] .slides{display:block;}
 * html .slides{height:1%;}
 
-#slider_wrapper{position: relative;}
+#slider_wrapper{position: relative; border: 0px solid; box-shadow: 0px 0px 10px;}
 #slider{margin:0; position: relative;}
 
 #flexslider{position:relative; min-height: 380px;}

@@ -58,21 +58,32 @@
 											<h6 class="text-center nonecase-font txt-grey">Enter your details below</h6>
 										</div>	
 										<div class="form-wrap">
-											<form action="#">
+										@if(Session::has('error_message'))
+										<div class="alert alert-danger">
+										<strong>Error!</strong> {{Session::get('error_message')}}
+										</div>
+										@endif
+										@if(Session::has('success_message'))
+										<div class="alert alert-success">
+										<strong>Success!</strong> {{Session::get('success_message')}}
+										</div>	
+										@endif
+											<form action="{{route('processLogin')}}" method="POST">
+												@csrf
 												<div class="form-group">
 													<label class="control-label mb-10" for="exampleInputEmail_2">Email Address</label>
-													<input type="email" class="form-control" required="" id="exampleInputEmail_2" placeholder="Enter e-mail">
+													<input type="email" name="email"class="form-control" required="" id="exampleInputEmail_2" placeholder="Enter e-mail">
 												</div>
 												<div class="form-group">
 													<label class="pull-left control-label mb-10" for="exampleInputpwd_2">Password</label>
 													<a class="capitalize-font txt-primary block mb-10 pull-right font-12" href="forgot-password.html">Forgot Password ?</a>
 													<div class="clearfix"></div>
-													<input type="password" class="form-control" required="" id="exampleInputpwd_2" placeholder="Enter password">
+													<input type="password" name="password" class="form-control" required="" id="exampleInputpwd_2" placeholder="Enter password">
 												</div>
 												
 												<div class="form-group">
 													<div class="checkbox checkbox-primary pr-10 pull-left">
-														<input id="checkbox_2" required="" type="checkbox">
+														<input id="checkbox_2" type="checkbox">
 														<label for="checkbox_2"> Remember Me</label>
 													</div>
 													<div class="clearfix"></div>

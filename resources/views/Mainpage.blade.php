@@ -1,15 +1,17 @@
-
-
-
-@extends('master')
-
-
-
+@extends('layouts.mainPage')
 @section('content')
 
+<div id="main">
 
-      
-<div class="container">
+<!--Header/Nav-->
+@include('frontInc.header')
+<!--Header/Nav-->
+<br>
+   <!--Slider-->
+   <!-- <div class="gslider-wrapper">
+      <div id="gslider2" class="flexslider flexslider-gslider">
+         <ul class="slides"> -->
+   <div class="container">
       <div class="row">
          <div class="col-sm-1"></div>
          <div class="col-sm-10">
@@ -32,71 +34,66 @@
                </div>
             </div>
          </div>
-      
+      </div>
    </div>
-
-<div class="main-content-inner">
-
-
-
-    <div id="content">
-
-        <div class="container">
-
+</div>
+</div>
+<!--Slider End-->
+<!--Main Content Starts-->
+<div class="main-content">
+   <div class="main-content-overlay"></div>
+   <div class="main-content-inner">
+      <div id="content">
+         <div class="container">
             <div class="row">
-                <div class="col-sm-1"></div>
-                <div class="col-sm-2 column-sidebar" >
-
-                    <div class="sidebar-block">
-                        <div class="sidebar-title">
-                            Categories
+               <div class="col-sm-1"></div>
+               <div class="col-sm-2 column-sidebar">
+                  <div class="sidebar-block">
+                     <div class="sidebar-title">
+                        Brands
+                     </div>
+                     <form   method="POST" action="{{url('/filter')}}">  
+                     {{ csrf_field() }}
+                     <div class="sidebar-content">
+                      <div class="brandscroll">
+                           <?php
+                             $categry = \App\Category::all();
+                             ?>
+                             @foreach($categry as $cats)
+                             <input type="checkbox" name="cat_id" value="{{$cats->id}}"> {{$cats->cat_name}}<br>
+                              @endforeach
                         </div>
-                        <form   method="POST" action="{{url('/filter')}}">  
-                            {{ csrf_field() }}
-                            <div class="sidebar-content">
-                                <?php
-                                $categry = \App\Category::all();
-                                ?>
-                                <!-- 
-                                                    <select  style="width: 170px;  height: 30px" name="cat_id" >
-                                                   <option value="0">select category</option> -->
-                                @foreach($categry as $cats)
-                                <!-- 
-                                                      <option value="{{$cats->id}}">{{$cats->cat_name}}</option> -->
-                                <input type="checkbox" name="cat_id" value="{{$cats->id}}">{{$cats->cat_name}}<span>
-                                    <br>
-                                    @endforeach
-                                    <!--   </select> -->
-                                    </div>
-                                    </div>
-                                    <div class="sidebar-block">
-                                        <div class="sidebar-title">
-                                            Filter By
-                                        </div>
-                                        <div class="sidebar-content">
-                                            <div class="sidebar-filters">
-                                                <div class="sidebar-filters-title">Price</div>
-                                                <select name="price">
-                                                    <option value="0">select price range</option>
-                                                    <option value="500-1000">500-1000</option>
-                                                    <option value="2000-5000">2000-5000</option>
-                                                    <option value="5000-8000">5000-8000</option>
-                                                    <option value="8000-11000">8000-11000</option>
-                                                    <option value="1000-20000">1000-20000</option>
-                                                </select>
-                                                <div><div class="form-group">
-                                                        <label class="control-label col-xs-3" for="submit"></label>
-                                                        <div class="col-xs-9">
-                                                            <button type="submit" class="btn btn-primary " value="submit">Submit</button>
-                                                        </div>
-                                                    </div></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    </form> 
+                     </div>
+                  </div>
+                  <div class="sidebar-block">
+                     <div class="sidebar-title">
+                        Filter By
+                     </div>
+                     <div class="sidebar-content">
+                        <div class="sidebar-filters">
+                           <div class="sidebar-filters-title">Price</div>
+                              <select name="price">
+                               <option value="0">Select Price Range</option>
+                               <option value="500-1000">Rs.500-Rs.1000</option>
+                               <option value="2000-5000">Rs.2000-Rs.5000</option>
+                               <option value="5000-8000">Rs.5000-Rs.8000</option>
+                               <option value="8000-11000">Rs.8000-Rs.11000</option>
+                               <option value="1000-20000">Rs.1000-Rs.20000</option>
+                              </select>
+                              <div>
+                                 <div class="form-group">
+
+                                       <button type="submit" class="btn btn-primary " value="submit">Submit</button>
+                                 </div>
+                            </div>
+                           </div>
+                           </div>
+                           </div>
+                           </form> 
                             </div>
                             <div class="col-sm-8 column-content">
                                 @if(Session::has('error_message'))
+                                <?php dd('here');?>
                                 <div class="alert alert-danger">
                                     <strong>Error!</strong> {{Session::get('error_message')}}
                                 </div>
@@ -155,6 +152,118 @@
                 </div>
             </div>
         </div>
+        <br>
+               
+<div class="container">
+   <!--Top Brands-->
+   <div class="title1">Top Brands</div>
+   <div class="owl-carousel owl-carousel-wide">
+      <div class="item">
+         <div class="product">
+            <div class="product-inner">
+               <a href="#" target="_blank" class="product-view"><img src="{{asset('flextop/images/brand1.png')}}" alt="" class="img-responsive" title=""></a>
+            </div>
+         </div>
+      </div>
+      <div class="item">
+         <div class="product">
+            <div class="product-inner">
+               <a href="#" target="_blank" class="product-view"><img src="{{asset('flextop/images/brand2.png')}}" alt="" class="img-responsive" title=""></a>
+            </div>
+         </div>
+      </div>
+      <div class="item">
+         <div class="product">
+            <div class="product-inner">
+               <a href="#" target="_blank" class="product-view"><img src="{{asset('flextop/images/brand3.png')}}" alt="" class="img-responsive" title=""></a>
+            </div>
+         </div>
+      </div>
+      <div class="item">
+         <div class="product">
+            <div class="product-inner">
+               <a href="#" target="_blank" class="product-view"><img src="{{asset('flextop/images/brand4.png')}}" alt="" class="img-responsive" title=""></a>
+            </div>
+         </div>
+      </div>
+      <div class="item">
+         <div class="product">
+            <div class="product-inner">
+               <a href="#" target="_blank" class="product-view"><img src="{{asset('flextop/images/brand5.png')}}" alt="" class="img-responsive" title=""></a>
+            </div>
+         </div>
+      </div>
+      <div class="item">
+         <div class="product">
+            <div class="product-inner">
+               <a href="#" target="_blank" class="product-view"><img src="{{asset('flextop/images/brand6.png')}}" alt="" class="img-responsive" title=""></a>
+            </div>
+         </div>
+      </div>
+      <div class="item">
+         <div class="product">
+            <div class="product-inner">
+               <a href="#" target="_blank" class="product-view"><img src="{{asset('flextop/images/brand7.png')}}" alt="" class="img-responsive" title=""></a>
+            </div>
+         </div>
+      </div>
+      <div class="item">
+         <div class="product">
+            <div class="product-inner">
+               <a href="#" target="_blank" class="product-view"><img src="{{asset('flextop/images/brand8.png')}}" alt="" class="img-responsive" title=""></a>
+            </div>
+         </div>
+      </div>
+      <div class="item">
+         <div class="product">
+            <div class="product-inner">
+               <a href="#" target="_blank" class="product-view"><img src="{{asset('flextop/images/brand9.png')}}" alt="" class="img-responsive" title=""></a>
+            </div>
+         </div>
+      </div>
+      <div class="item">
+         <div class="product">
+            <div class="product-inner">
+               <a href="#" target="_blank" class="product-view"><img src="{{asset('flextop/images/brand10.png')}}" alt="" class="img-responsive" title=""></a>
+            </div>
+         </div>
+      </div>
+      <div class="item">
+         <div class="product">
+            <div class="product-inner">
+               <a href="#" target="_blank" class="product-view"><img src="{{asset('flextop/images/brand11.png')}}" alt="" class="img-responsive" title=""></a>
+            </div>
+         </div>
+      </div>
+      <div class="item">
+         <div class="product">
+            <div class="product-inner">
+               <a href="#" target="_blank" class="product-view"><img src="{{asset('flextop/images/brand12.png')}}" alt="" class="img-responsive" title=""></a>
+            </div>
+         </div>
+      </div>
+      <div class="item">
+         <div class="product">
+            <div class="product-inner">
+               <a href="#" target="_blank" class="product-view"><img src="{{asset('flextop/images/brand13.png')}}" alt="" class="img-responsive" title=""></a>
+            </div>
+         </div>
+      </div>
+      <div class="item">
+         <div class="product">
+            <div class="product-inner">
+               <a href="#" target="_blank" class="product-view"><img src="{{asset('flextop/images/brand14.png')}}" alt="" class="img-responsive" title=""></a>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<!--Top Brands End-->
 
-        @endsection
+<!--Footer Starts-->
+@include('frontInc.footer')
+<!--Footer End-->
 
+</div><!--main-content Ends Here-->
+</div><!--main end here-->
+@endsection

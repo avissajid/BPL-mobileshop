@@ -74,11 +74,11 @@ Route::post('/filter', 'MainController@filter');
 // Route::get('/show', 'MainController@search');
 
 Route::get('/adminlogin', function () {
-    return view('adminPanel.adminLogin');
+    return view('adminPanel.login');
 });
 
 Route::get('/adminSignup', function () {
-    return view('adminPanel.adminSignup');
+    return view('adminPanel.signup');
 });
 Auth::routes();
 Route::get('/viewtable', 'AdminController@table')->name('viewtable');
@@ -137,4 +137,5 @@ Route::get('products/{id}', 'MainController@showProductsWithCategory')->name('pr
 Route::get('/orders', function () {
     return view('adminPanel.order');
 });
+Route::post('processSignup', 'UserController@processSignup')->name('processSignup');
 Route::post('processLogin', 'UserController@processLogin')->name('processLogin');
