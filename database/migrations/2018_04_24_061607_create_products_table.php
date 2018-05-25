@@ -17,11 +17,12 @@ class CreateProductsTable extends Migration
             $table->increments('id');
 
             $table->string('price');
-            $table->string('dimensions');
+            $table->string('SIM');
+            $table->string('Dimensions');
             $table->string('weight');
             $table->string('OS');
             $table->string('details');
-
+             $table->string('Protection');
             $table->string('model_name');
             
             $table->string('image')->nullable();

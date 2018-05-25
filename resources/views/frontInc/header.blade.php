@@ -22,6 +22,8 @@
                </div>
             </div>
             <div class="col-sm-3">
+               <div class="hello1"><a href="{{url('/adminlogin')}}" target="_blank">SignOut</a>
+               </div>
                <div class="hello1">Hello Customer - <a href="{{url('/adminlogin')}}" target="_blank">Login</a> or <a href="{{url('/adminSignup')}}" target="_blank">Register</a>
                </div>
             </div>

@@ -34,6 +34,7 @@ Route::get('/Main', function () {
 Route::get('/check', function () {
     return view('check');
 });
+
 Route::get('/main/{id}', 'MainController@showProductsWithCategory');
 Route::post('/AddCategory', 'MainController@addcategory');
 Route::post('/AddBrand', 'MainController@addbrand');
@@ -116,10 +117,12 @@ Route::get('/addproducts', function () {
     return view('adminPanel.addProduct');
 });
 Route::post('/addproducts', 'MainController@addproduct');
+
 Route::get('/addbrand', function () {
     return view('adminPanel.addBrand');
 });
 Route::post('/addbrand', 'MainController@addcategory');
+
 Route::get('/addmodel', function () {
     return view('adminPanel.addModel');
 });

@@ -24,7 +24,7 @@ class UserController extends Controller
            }
         }
 
-      public static function processLogin() {
+      public static function processLogin(Request $request) {
         $inputs = Input::except('_token');
         $validate = Validator::make($inputs, User::$login_rules);
         if ($validate->fails()) {
@@ -34,9 +34,25 @@ class UserController extends Controller
             'email' => $inputs['email'],
             'password' => $inputs['password'],
         ];
-        if (Auth::attempt($credemtial)) {
-            return redirect()->route('dashboard');
+        if (Auth::attempt($credemtial)) { 
+            $user =User::where('email', $request->email)->first();
+            if($user ->is_admin())
+            {
+                $request->session()->put('userType','1');
+                return redirect()->route('dashboard');
+            }
+            else
+            {
+
+                $request->session()->put('userType','0');
+               
+                return redirect()->route('home');
+            }
+            
         }
+            
+        
+
         return Redirect::back()->withInput(Input::except('password'))->with('error_message', 'Invalid login detail');
     }
        

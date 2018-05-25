@@ -10,7 +10,7 @@ a[href^="tel:"] { color: inherit; text-decoration: none;}
 a{ color:#156192; text-decoration: underline; outline:none}
 a:hover{ color:#156192; text-decoration: none; outline:none}
 
-body{ background:#fff; border:0; font: 13px 'Rubik', Arial, Helvetica, sans-serif; color:#333e48 ; line-height:2.846154; min-width:320px;}
+body{ background:#fff; border:0; font: 13px 'Rubik', Arial, Helvetica, sans-serif; color:#333e48 ; line-height:1.846154; min-width:320px;}
 
 
 .container { position: relative; min-width: 320px;}

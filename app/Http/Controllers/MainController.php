@@ -139,7 +139,7 @@ class MainController extends Controller {
         $product->Weight = $request->input('Weight');
         $product->OS = "$request->input('OS')";
         $product->Protection = "$request->input('Protection')";
-        $product->SIM = "?";
+        $product->SIM = $request->input('SIM');
         $product->Dimensions = "$request->input('Dimensions')";
         $product->Primary = $request->input('Primary');
         $product->Front = $request->input('Front');
