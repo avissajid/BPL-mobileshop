@@ -142,3 +142,12 @@ Route::get('/orders', function () {
 });
 Route::post('processSignup', 'UserController@processSignup')->name('processSignup');
 Route::post('processLogin', 'UserController@processLogin')->name('processLogin');
+
+Route::get('/SignOut', 'UserController@SignOut')->name('SignOut')->name('SignOut');
+Route::get('/aboutus', function () {
+    return view('aboutus');
+});
+
+Route::get('/contactus', function () {
+    return view('contactus');
+});

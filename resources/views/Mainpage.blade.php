@@ -105,7 +105,7 @@
                               <div class="product">
                                  <div class="product-inner">
                                     <figure class="product-media">
-                                       <a href="{{route('details',['id'=>$book->id])}}" class="product-view">
+                                       <a href="{{route('details',['id'=>$book->id])}}">
                                           @if(isset($book->image))
                                           <img src="{{asset('images') . '/'.$book->image}}" alt="" class="img-responsive">
                                           @else

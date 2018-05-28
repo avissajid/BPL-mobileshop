@@ -9,6 +9,7 @@ use Redirect;
 use App\User;
 use Auth;
 use Hash;
+use Session;
 class UserController extends Controller
 {
      public static function processSignup() {
@@ -46,7 +47,7 @@ class UserController extends Controller
 
                 $request->session()->put('userType','0');
                
-                return redirect()->route('home');
+                return redirect()->route('show');
             }
             
         }
@@ -54,6 +55,12 @@ class UserController extends Controller
         
 
         return Redirect::back()->withInput(Input::except('password'))->with('error_message', 'Invalid login detail');
+    }
+     public function SignOut() {
+        session::flush();
+        auth::attempt();
+        
+        return Redirect()->to('adminlogin')->with('success_message', 'You have successfully SignOut');
     }
        
 }

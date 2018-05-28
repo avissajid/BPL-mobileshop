@@ -22,11 +22,14 @@
                </div>
             </div>
             <div class="col-sm-3">
-               <div class="hello1"><a href="{{url('/adminlogin')}}" target="_blank">SignOut</a>
+              @if (isset(Auth::user()->id))
+               <div class="hello1"><a href="{{url('SignOut')}}" target="_blank">Sign Out</a>
                </div>
+               @else
                <div class="hello1">Hello Customer - <a href="{{url('/adminlogin')}}" target="_blank">Login</a> or <a href="{{url('/adminSignup')}}" target="_blank">Register</a>
                </div>
             </div>
+            @endif
          </div>
       </div>
    </div>
@@ -42,7 +45,7 @@
                </button>
                <div class="navbar-collapse navbar-collapse_ collapse">
                   <ul class="nav navbar-nav sf-menu clearfix">
-                     <li class="sub-menu sub-menu-1"><a href="{{url('/mobilelist')}}">Home</a></li>
+                     <li class="sub-menu sub-menu-1"><a href="{{url('/')}}">Home</a></li>
 
                      <li class="sub-menu sub-menu-1"><a href="#">Samsung Phones</a></li>
                      
@@ -54,6 +57,14 @@
 
                      <li class=""><a href="{{url('/aboutus')}}">About Us</a></li>
                      <li><a href="{{url('/contactus')}}">Contact us</a></li>
+                     <li>
+                        @if(Auth::check()) 
+                        
+                        {{Auth::user()->name}}
+
+                        
+                        @endif
+                     </li>
                   </ul>
                </div>
             </div>
