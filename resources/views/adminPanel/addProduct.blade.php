@@ -8,12 +8,10 @@
 		  <h5 class="txt-dark"><strong>Add Product:</strong></h5>
 		</div>
 	</div>
-	<!-- /Title -->
 	 <?php  
              $brand=\App\Brand::all();  
                ?>
  <?php $cat=\App\Category::all() ?>
-	<!-- Row -->
 	<div class="row">
 		<div class="col-sm-12">
 			<div class="panel panel-default card-view">
@@ -47,9 +45,7 @@
 											</select>
 										</div>
 									</div>
-									<!--/span-->
 								</div>
-								<!-- Row -->
 								<div class="row">
 									<div class="col-md-6 col-sm-4 col-xs-12">
 										<div class="form-group">
@@ -74,23 +70,28 @@
 											<input type="text" id="price" name="price" class="form-control" placeholder="Enter product price">
 										</div>
 									</div>
-									<!--/span-->
+
 									<div class="col-md-6">
 										<div class="form-group">
 											<label class="control-label mb-10"><strong>Product Details</strong></label>
 											<textarea class="form-control" rows="4"  id="msg" name="details"></textarea>
 										</div>
 									</div>
-									<!--/span-->
 								</div>
-								<!--/row-->
+								<?php $photo=\App\photo::all() ?>
 								<div class="row">
-									<div class="col-md-12">
-										<label for="FormControlFile" class="control-label mb-10"><strong>Product Image</strong></label>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label class="control-label mb-10"><strong>Images</strong></label>
+											<select class="form-control ProductCategory" id="ProductCategory" data-placeholder="Choose a Category" tabindex="1" name="image_id">
+												@foreach($photo as $p)
+                                                <option value="{{$p->id}}">{{$p->img_name}}</option>
+                                                 @endforeach   
+											</select>
+										</div>
+									</div>
 										<input type="file" class="form-control-file" id="image" name="image">
 									</div>
-								</div>
-								<!--/row-->
 								<div class="seprator-block"></div>
 								<h5 class="txt-dark capitalize-font">Display</h5>
 								<hr class="light-grey-hr"/>
@@ -156,7 +157,7 @@
 									<div class="col-md-6">
 										<div class="form-group">
 											<label class="control-label mb-10"><strong>Protection</strong></label>
-											<input type="text" class="form-control" name="Protection" placeholder="Enter protection">
+											<input type="text" class="form-control" name="Protection" id="Protection" placeholder="Enter protection">
 										</div>
 									</div>
 									<!--/span-->
@@ -174,8 +175,8 @@
 								<div class="row">
 									<div class="col-md-6">
 										<div class="form-group">
-											<label class="control-label mb-10"><strong>Dimensions</strong></label>
-											<input type="text" class="form-control" name="Dimensions" placeholder="Enter dimension">
+											<label class="control-label mb-10" for="Dimensions"><strong>Dimensions</strong></label>
+											<input type="text" class="form-control" name="Dimensions" id="Dimensions" placeholder="Enter dimension">
 										</div>
 									</div>
 									<!--/span-->
@@ -194,11 +195,10 @@
 									<div class="col-md-6">
 										<div class="form-group">
 											<label class="control-label mb-10"><strong>Operating System</strong></label>
-											<input type="text" id="price" class="form-control"  name="OS" placeholder="Enter OS">
+											<input type="text" id="OS" class="form-control"  name="OS" placeholder="Enter OS">
 										</div>
 									</div>
 								</div>
-								<!--/row-->
 								<div class="seprator-block"></div>
 								<h5 class="txt-dark capitalize-font">Camera</h5>
 								<hr class="light-grey-hr"/>

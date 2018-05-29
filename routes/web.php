@@ -151,3 +151,9 @@ Route::get('/aboutus', function () {
 Route::get('/contactus', function () {
     return view('contactus');
 });
+
+
+Route::get('GetOrderAddress','MainController@GetOrderAddress');
+
+Route::get('GetAllUser','MainController@GetAllUser');
+Route::get('/orders','MainController@order');

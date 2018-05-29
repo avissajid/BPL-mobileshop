@@ -27,20 +27,20 @@
             </div>
             <div id="DIV_64">
                <div id="DIV_65">
-                  <img src= "{{asset('images') . '/'.$pic->image1}}"  >
+                  <img src= "{{asset('images') . '/'.$pic->image1}}" width="42" height="42" >
                </div>
                <div id="DIV_67">
-                  <img src="{{asset('images') . '/'. $pic->image2}}">
+                  <img src="{{asset('images') . '/'. $pic->image2}}" width="42" height="42">
                </div>
                <div id="DIV_69">
-                  <img src="{{asset('images') . '/' . $pic->image3}}">
+                  <img src="{{asset('images') . '/' . $pic->image3}}" width="42" height="42">
                </div>
                <div id="DIV_71">
-                  <img src="{{asset('images') . '/' . $pic->image4}}">
+                  <img src="{{asset('images') . '/' . $pic->image4}}" width="42" height="42">
                </div>
                @endforeach
                <div id="DIV_73">
-                  <a href="https://www.youtube.com/watch?v=5_-NKRVn7IQ"> <img src="public\images\download.jpg"> Vidio </a>
+                  <a href="https://www.youtube.com/watch?v=5_-NKRVn7IQ"> <img src="BPL-mobileshop/public/flextop/images/SamsungGalaxyS9Plus.gif"> Vidio </a>
                </div>
             </div>
          </div>
@@ -51,34 +51,10 @@
                </div>
                <div id="DIV_84">
                   <div id="DIV_85">
-                     <div id="DIV_86">
-                        <div id="DIV_87">
-                           COLOURS
-                        </div>
-                        <div id="DIV_88">
-                           Clear
-                        </div>
-                     </div>
-                     <div id="DIV_89">
-                        <label id="LABEL_90">
-                        <input name="product-color" type="radio" value="black" id="INPUT_91" />
-                        </label>
-                        <div id="DIV_92">
-                           <span id="SPAN_93"></span>
-                        </div>
-                        <label id="LABEL_94">
-                        <input name="product-color" type="radio" value="purple" id="INPUT_95" />
-                        </label>
-                        <div id="DIV_96">
-                           <span id="SPAN_97"></span>
-                        </div>
-                        <label id="LABEL_98">
-                        <input name="product-color" type="radio" value="blue" id="INPUT_99" />
-                        </label>
-                        <div id="DIV_100">
-                           <span id="SPAN_101"></span>
-                        </div>
-                     </div>
+                     
+                     
+                     
+                    
                   </div>
                   <div id="DIV_102">
                      <div id="DIV_103">
@@ -86,14 +62,12 @@
                            SIZES:<?php echo ($data->Size) ?>
                         </div>
                      </div>
-                     <div id="DIV_105">
+                     
                         <div id="DIV_106">
-                           <span id="SPAN_107">64 GB</span>
+                           <span id="SPAN_107">ROM:<?php echo ($data->Internal) ?></span>
                         </div>
-                        <div id="DIV_108">
-                           <span id="SPAN_109">256GB</span>
-                        </div>
-                     </div>
+                        
+                    
                   </div>
                </div>
                <div id="DIV_110">

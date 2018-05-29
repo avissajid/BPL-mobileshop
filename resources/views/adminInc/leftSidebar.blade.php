@@ -30,7 +30,10 @@
 					<a href="{{url('/addmodel')}}">Add Model</a>
 				</li>
 				<li>
-					<a href="#">Orders</a>
+					<a href="{{url('/insert')}}">Add Multipule Images</a>
+				</li>
+				<li>
+					<a href="{{url('/orders')}}">Orders</a>
 				</li>
 				<li>
 					<a href="#">Cart</a>
@@ -42,4 +45,3 @@
 		</li>
 	</ul>
 </div>
-<!-- /Left Sidebar Menu -->

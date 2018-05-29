@@ -48,127 +48,12 @@
               </ul>
             </div>
           </div>
-          <div class="lang1">
-            <div class="dropdown">
-              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">English<span class="caret"></span>
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                <li><a class="ge" href="#">Deutsch</a></li>
-                <li><a class="ru" href="#">Russian</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="currency1">
-            <div class="dropdown">
-              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">USD<span class="caret"></span>
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenu3">
-                <li><a href="#">EUR</a></li>
-                <li><a href="#">RUB</a></li>
-              </ul>
-            </div>
-          </div>
+         
         </div>
       </div>
     </div>
   </div>
-  <div class="top2_wrapper">
-    <div class="container">
-      <div class="top2 clearfix">
-        <header>
-          <div class="logo_wrapper">
-            <a href="index-2.html" class="logo">
-              <img src="images/logo.png" alt="" class="img-responsive">
-            </a>
-          </div>
-        </header>
-        <div class="hotline1">
-          <div class="txt1">Hotline:</div>
-          <div class="txt2">(800) 123 456 789</div>
-        </div>
-        <div class="search_section_wrapper">
-          <div class="all_categories1">
-            <div class="dropdown">
-              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">All Categories<span class="caret"></span>
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenu4">
-                <li><a href="#">Category 1</a></li>
-                <li><a href="#">Category 2</a></li>
-                <li><a href="#">Category 3</a></li>
-                <li><a href="#">Category 4</a></li>
-                <li><a href="#">Category 5</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="search-form-wrapper clearfix">
-            <form class="clearfix">
-              <input type="text" class="form-control" placeholder="" value="Search Here" onBlur="if(this.value=='') this.value='Search Here'" onFocus="if(this.value =='Search Here' ) this.value=''">
-              <a href="#" class="">Search</a>
-            </form>
-          </div>
-        </div>
-        <div class="my_cart_wrapper">
-          <div class="my_cart_button">
-            <a href="shopping-cart.html">
-              <span class="my_cart_icon"><span>3</span></span>
-              <span class="txt1">My Cart:</span>
-              <span class="txt2">3 item(s) - <span>$200.00</span></span>
-            </a>
-          </div>
-          <div class="my_cart_popup">
-            <div class="my_cart_item clearfix">
-              <a href="#" class="my_cart_item_close"><i class="fa fa-times"></i></a>
-              <figure>
-                <img src="images/cart01.jpg" alt="" class="img-responsive">
-              </figure>
-              <div class="caption">
-                <div class="txt1">
-                  <a href="#">Widescreen 55″ LED4K Ultra HD</a>
-                </div>
-                <div class="txt2">2 x $762.12</div>
-              </div>
-            </div>
-            <div class="my_cart_item clearfix">
-              <a href="#" class="my_cart_item_close"><i class="fa fa-times"></i></a>
-              <figure>
-                <img src="images/cart02.jpg" alt="" class="img-responsive">
-              </figure>
-              <div class="caption">
-                <div class="txt1">
-                  <a href="#">Widescreen 55″ LED4K Ultra HD</a>
-                </div>
-                <div class="txt2">2 x $762.12</div>
-              </div>
-            </div>
-            <div class="my_cart_shipping clearfix">
-              <div class="left">Shipping :</div>
-              <div class="right">$0.00</div>
-            </div>
-            <div class="my_cart_subtotal clearfix">
-              <div class="left">Subtotal :</div>
-              <div class="right">$762.12</div>
-            </div>
-            <a href="shopping-cart.html" class="my_cart_view_cart">View Cart</a>
-            <a href="checkout.html" class="my_cart_check_out">Check Out</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="top3_wrapper">
-    <div class="container">
-      <div class="top3 clearfix">
-        <div class="navbar navbar_ navbar-default">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>   
-        </div>
-      </div>
-    </div>
-  </div>
+  
 </div>
 <div class="main-content">
 <div class="main-content-overlay"></div>

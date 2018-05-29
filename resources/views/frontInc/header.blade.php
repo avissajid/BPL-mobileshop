@@ -24,12 +24,16 @@
             <div class="col-sm-3">
               @if (isset(Auth::user()->id))
                <div class="hello1"><a href="{{url('SignOut')}}" target="_blank">Sign Out</a>
+                   @if(Auth::check())  
+                        {{Auth::user()->name}}
+                        @endif
                </div>
                @else
-               <div class="hello1">Hello Customer - <a href="{{url('/adminlogin')}}" target="_blank">Login</a> or <a href="{{url('/adminSignup')}}" target="_blank">Register</a>
+               <div class="hello1">Hello Customer - <a href="{{url('/adminlogin')}}">Login</a> or <a href="{{url('/adminSignup')}}">Register</a>
                </div>
+               @endif
             </div>
-            @endif
+            
          </div>
       </div>
    </div>
@@ -58,12 +62,7 @@
                      <li class=""><a href="{{url('/aboutus')}}">About Us</a></li>
                      <li><a href="{{url('/contactus')}}">Contact us</a></li>
                      <li>
-                        @if(Auth::check()) 
-                        
-                        {{Auth::user()->name}}
-
-                        
-                        @endif
+                     <a href="{{url('/cart')}}">View Cart</a>
                      </li>
                   </ul>
                </div>

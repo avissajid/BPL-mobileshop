@@ -22,7 +22,7 @@
 					<div class="panel-body pa-0">
 						<article class="col-item">
 							<div class="photo">
-								 <a href="{{route('products',['id'=>$cats->id])}}"> <img src="{{asset('adminpanel/dist/img/chair.jpg')}}" class="img-responsive" alt="Product Image" /> </a>
+								 <a href="{{route('products',['id'=>$cats->id])}}">  <img src="{{asset('images') . '/'.$cats->image}}"  class="img-responsive" alt="Product Image" /> </a>
 							</div>
 							<div class="info">
 								 <a href="{{route('products',['id'=>$cats->id])}}"><h6>{{$cats->cat_name}}</h6>

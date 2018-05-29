@@ -51,12 +51,7 @@
             <div class="main-content">
                 <div class="main-content-overlay"></div>
 
-                <div class="breadcrumbs1_wrapper">
-                    <div class="container">
-                        <div class="breadcrumbs1"><a href="index-2.html">Home</a><span></span><a href="index-2.html">TV & Audio</a><span></span>Shopping Cart</div>
-                    </div>
-                </div>
-
+                
                 <div class="main-content-inner">
 
                     <div id="content">

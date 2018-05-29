@@ -21,8 +21,7 @@
                             <div class="accordion-title">Shipping Information</div>
                             @include('forms.shipping')
                         </div>
-                    </div>
-                    <div class="row">
+                        <div class="row">
                         <div class="col-md-6">
                             <script
                                 src="https://checkout.stripe.com/checkout.js" class="stripe-button"
@@ -35,7 +34,14 @@
                                 data-currency="usd">
                             </script>   
                         </div>
+                        </div>
+                        <div class="row">
+                        <div class="col-md-6">
+                           
+                        </div>
+                        </div>
                     </div>
+                    
                 </div>
             </div>	 
         </form>

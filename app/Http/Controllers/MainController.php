@@ -60,7 +60,7 @@ class MainController extends Controller {
         }
         $product->img_name = $request->input('img_name');
         $product->save();
-        return view('addproduct');
+        return view('adminPanel.addProduct');
     }
 
     public function filter(Request $request) {
@@ -87,7 +87,14 @@ class MainController extends Controller {
     public function addcategory(Request $request) {
         $Category = new Category();
         $Category->cat_name = $request->input('cat_name');
-        
+        $file = Input::file("image");
+        if (!empty($file)) {
+            $newFilename = $file->getClientOriginalName();
+            $destinationPath = public_path() . '/images';
+            $upload = $file->move($destinationPath, $newFilename);
+            if ($upload)
+                $Category->image = $newFilename;
+        }
         $Category->save();
         return view('adminPanel.addBrand');
     }
@@ -137,10 +144,10 @@ class MainController extends Controller {
                 $product->image = $newFilename;
         }
         $product->Weight = $request->input('Weight');
-        $product->OS = "$request->input('OS')";
-        $product->Protection = "$request->input('Protection')";
+        $product->OS = $request->input('OS');
+        $product->Protection = $request->input('Protection');
         $product->SIM = $request->input('SIM');
-        $product->Dimensions = "$request->input('Dimensions')";
+        $product->Dimensions = $request->input('Dimensions');
         $product->Primary = $request->input('Primary');
         $product->Front = $request->input('Front');
         $product->Video = $request->input('Video');
@@ -227,5 +234,30 @@ class MainController extends Controller {
         $product = Product::where('id', $id)->get();
         return response()->json($product);
     }
+     public function GetOrderAddress(Request $request)
+    {
+       $Order_Address=\App\Order_Address::all();
+       return response()->json($Order_Address);
+
+
+    }
+     
+     public function GetAllUser(Request $request)
+    {
+       $user=\App\User::all();
+       return response()->json($user);
+
+
+    } 
+     public function order()
+         {
+
+
+          $Order_Address=\App\Order_Address::all();
+
+
+          return view('adminPanel.order',compact('Order_Address'));
+
+        }
 
 }
