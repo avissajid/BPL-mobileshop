@@ -333,7 +333,7 @@ transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-out; -webkit-trans
 
 .banner6{padding-bottom: 40px;}
 
-.sidebar-filters{border: 1px solid #ebebeb; position: relative; padding: 20px;}
+.sidebar-filters{border: 1px solid #ebebeb; position: relative; padding: 10px;}
 
 .sidebar-filters-title{margin-bottom: 10px; border-bottom: 1px solid #ebebeb; font-size: 14px; font-weight: 500; padding-bottom: 10px; padding-top: 10px;}
 

@@ -1,9 +1,8 @@
 @extends('layouts.productDetail')
 @section('content')
 
-<!--Header/Nav-->
+   <!--Header/Nav-->
    @include('frontInc.header')
-<!--Header/Nav-->
 
 <div id="DIV_1">
    <div id="DIV_2">
@@ -39,9 +38,9 @@
                   <img src="{{asset('images') . '/' . $pic->image4}}" width="42" height="42">
                </div>
                @endforeach
-               <div id="DIV_73">
+              <!--  <div id="DIV_73">
                   <a href="https://www.youtube.com/watch?v=5_-NKRVn7IQ"> <img src="BPL-mobileshop/public/flextop/images/SamsungGalaxyS9Plus.gif"> Vidio </a>
-               </div>
+               </div> -->
             </div>
          </div>
          <div id="DIV_78">
@@ -59,12 +58,12 @@
                   <div id="DIV_102">
                      <div id="DIV_103">
                         <div id="DIV_104">
-                           SIZES:<?php echo ($data->Size) ?>
+                           
                         </div>
                      </div>
                      
                         <div id="DIV_106">
-                           <span id="SPAN_107">ROM:<?php echo ($data->Internal) ?></span>
+                          
                         </div>
                         
                     
@@ -607,7 +606,6 @@
                </table>
             </div>
          </div>
-
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

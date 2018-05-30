@@ -49,6 +49,7 @@
                      </div>
                      <form method="POST" action="{{url('/filter')}}">
                      {{ csrf_field() }}
+                     <?php $products= DB::table('products')->paginate(15);  ?>
                      <div class="sidebar-content">
                         <div class="brandscroll">
                            <?php
@@ -69,11 +70,11 @@
                            <div class="sidebar-filters-title">Price</div><br>
                               <select name="price">
                                  <option value="0">Price Range</option>
-                                 <option value="500-1000">Rs.1000-Rs.2000</option>
-                                 <option value="2000-5000">Rs.2001-Rs.5000</option>
-                                 <option value="5000-8000">Rs.5001-Rs.10000</option>
-                                 <option value="8000-11000">Rs.10001-Rs.20000</option>
-                                 <option value="1000-20000">Rs.20001-Rs.40000</option>
+                                 <option value="1000-2000">Rs.1000-Rs.2000</option>
+                                 <option value="2001-5000">Rs.2001-Rs.5000</option>
+                                 <option value="5001-10000">Rs.5001-Rs.10000</option>
+                                 <option value="10001-20000">Rs.10001-Rs.20000</option>
+                                 <option value="20001-40000">Rs.20001-Rs.40000</option>
                               </select>
                            <div class="form-group">
                               <br>
@@ -128,7 +129,7 @@
                                        <div class="product-price"><?php echo "Rs."; ?>{{$book->price}}</div>
                                        <div class="product-prices clearfix">
                                           <div class="product-price-old">
-                                             <a href="{{route('addToCart' , ['id' => $book->id])}}" class="btn btn-primary " value="submit">Buy</a>
+                                             <a href="{{route('addToCart' , ['id' => $book->id])}}" class="btn btn-primary " value="submit">Add to Cart</a>
                                           </div>
                                        </div>
                                     </div>
@@ -138,18 +139,14 @@
                            @endforeach
                         </div>
                      </div>
+
                   </div>
                </div>
             </div>
             <div class="col-sm-1"></div>
             <div class=" col-sm-10 pane2 clearfix">
-               <ul class="pager clearfix">
-                  <li class="active"><a href="#" target="_blank">1</a></li>
-                  <li class="li"><a href="#" target="_blank">2</a></li>
-                  <li class="li"><a href="#" target="_blank">3</a></li>
-                  <li class="next"><a href="#" target="_blank"></a></li>
-               </ul>
-               <div class="showing-results">Showing 1-36 <span>of 100 results</span></div>
+            
+               <div >{{ $products->links() }} </div>
             </div>
          </div>
       </div>

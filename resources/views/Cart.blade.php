@@ -3,36 +3,36 @@
 
     <!-- Mirrored from template-preview.com/bootstrap-templates/flextop/shopping-cart.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 10 Apr 2018 07:21:32 GMT -->
     <head>
-        <title>Flex Bootstrap responsive ecommerce template - Shopping Cart</title>
+        <title>Shopping Cart I Mobile Touch</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link href="{{asset('css/jquery-ui.css')}}" rel="stylesheet">
-        <link href="{{asset('css/bootstrap.css')}}" rel="stylesheet">
-        <link href="{{asset('css/font-awesome.css')}}" rel="stylesheet">
-        <link href="{{asset('css/flexslider.css')}}" rel="stylesheet">
-        <link href="{{asset('css/gflexslider.css')}}" rel="stylesheet">
-        <link href="{{asset('css/owl.carousel.css')}}" rel="stylesheet">
-        <link href="{{asset('css/animate.css')}}" rel="stylesheet">
-        <link href="{{asset('css/style.css')}}" rel="stylesheet">
+        <link href="{{asset('flextop/css/jquery-ui.css')}}" rel="stylesheet">
+        <link href="{{asset('flextop/css/bootstrap.css')}}" rel="stylesheet">
+        <link href="{{asset('flextop/css/font-awesome.css')}}" rel="stylesheet">
+        <link href="{{asset('flextop/css/flexslider.css')}}" rel="stylesheet">
+        <link href="{{asset('flextop/css/gflexslider.css')}}" rel="stylesheet">
+        <link href="{{asset('flextop/css/owl.carousel.css')}}" rel="stylesheet">
+        <link href="{{asset('flextop/css/animate.css')}}" rel="stylesheet">
+        <link href="{{asset('flextop/css/style.css')}}" rel="stylesheet">
 
-        <script src="{{asset('js/jquery.js')}}"></script>
-        <script src="{{asset('js/jquery-ui.js')}}"></script>
-        <script src="{{asset('js/jquery-migrate-1.2.1.min.js')}}"></script>
-        <script src="{{asset('js/jquery.easing.1.3.js')}}"></script>
-        <script src="{{asset('js/superfish.js')}}"></script>
+        <script src="{{asset('flextop/js/jquery.js')}}"></script>
+        <script src="{{asset('flextop/js/jquery-ui.js')}}"></script>
+        <script src="{{asset('flextop/js/jquery-migrate-1.2.1.min.js')}}"></script>
+        <script src="{{asset('flextop/js/jquery.easing.1.3.js')}}"></script>
+        <script src="{{asset('flextop/js/superfish.js')}}"></script>
 
-        <script src="{{asset('js/jquery.flexslider.js')}}"></script>
+        <script src="{{asset('flextop/js/jquery.flexslider.js')}}"></script>
 
-        <script src="{{asset('js/owl.carousel.js')}}"></script>
+        <script src="{{asset('flextop/js/owl.carousel.js')}}"></script>
 
-        <script src="{{asset('js/jquery.appear.js')}}"></script>
+        <script src="{{asset('flextop/js/jquery.appear.js')}}"></script>
 
-        <script src="{{asset('js/jquery.caroufredsel.js')}}"></script>
-        <script src="{{asset('js/jquery.touchSwipe.min.js')}}"></script>
-
-        <script src="{{asset('js/scripts.js')}}"></script>
+        <script src="{{asset('flextop/js/jquery.caroufredsel.js')}}"></script>
+        <script src="{{asset('flextop/js/jquery.touchSwipe.min.js')}}"></script>
+        
+        <script src="{{asset('flextop/js/scripts.js')}}"></script>
 
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

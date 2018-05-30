@@ -5,7 +5,7 @@
             <div class="col-sm-3">
                <header>
                   <div class="logo_wrapper">
-                     <a href="index-2.html" class="logo">
+                     <a href="{{url('/')}}" class="logo">
                      <img src="{{asset('flextop/images/MTLogo.png')}}" alt="" class="img-responsive" title="Logo">
                      </a>
                   </div>
