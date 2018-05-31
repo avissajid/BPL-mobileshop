@@ -26,16 +26,16 @@
             </div>
             <div id="DIV_64">
                <div id="DIV_65">
-                  <img src= "{{asset('images') . '/'.$pic->image1}}" width="42" height="42" >
+                  <img src= "{{asset('images') . '/'.$pic->image1}}" width="42" height="46" >
                </div>
                <div id="DIV_67">
-                  <img src="{{asset('images') . '/'. $pic->image2}}" width="42" height="42">
+                  <img src="{{asset('images') . '/'. $pic->image2}}" width="42" height="46">
                </div>
                <div id="DIV_69">
-                  <img src="{{asset('images') . '/' . $pic->image3}}" width="42" height="42">
+                  <img src="{{asset('images') . '/' . $pic->image3}}" width="42" height="46">
                </div>
                <div id="DIV_71">
-                  <img src="{{asset('images') . '/' . $pic->image4}}" width="42" height="42">
+                  <img src="{{asset('images') . '/' . $pic->image4}}" width="42" height="46">
                </div>
                @endforeach
               <!--  <div id="DIV_73">
@@ -76,6 +76,7 @@
                            <img src="https://assets.mspcdn.net/q_auto/logos/partners/flipkart_store.png" id="IMG_114" alt='' />
                         </div>
                         <div id="DIV_115">
+                          Rs:<?php echo ($data->flipcart) ?>
                            <div id="DIV_116">
                            </div>
                         </div>
@@ -90,6 +91,7 @@
                            <img src="https://assets.mspcdn.net/q_auto/logos/partners/samsungs9_store.png" id="IMG_122" alt='' />
                         </div>
                         <div id="DIV_123">
+                           Rs:<?php echo ($data->drazpk) ?>
                            <div id="DIV_124">
                            </div>
                         </div>
@@ -104,6 +106,7 @@
                            <img src="https://assets.mspcdn.net/q_auto/logos/partners/croma_store.png" id="IMG_130" alt='' />
                         </div>
                         <div id="DIV_131">
+                           Rs:<?php echo ($data->ebay) ?>
                            <div id="DIV_132">
                            </div>
                         </div>

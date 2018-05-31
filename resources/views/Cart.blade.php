@@ -80,28 +80,18 @@
                                                         <img class="img-responsive" src="https://image.ibb.co/kk9GY8/shopping_cart.png">
                                                         @endif
                                                     </figure>
-                                                    <div class="caption">
-                                                        <a href="product-details.html">Widescreen 55″ LED4K Ultra HD</a>
-                                                    </div>
+                                                   
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="product-shopping-cart-price">Rs: {{$p->price}}</div>
                                             </td>
-                                            <!-- <td>
-                                                <div class="product-shopping-cart-quantity">
-                                                    <div class="quantity">
-                                                        <button class="dec quantity-button">-</button>
-                                                        <input class="quantity-input" type="text" value="2">
-                                                        <button class="inc quantity-button">+</button>
-                                                    </div>
-                                                </div>
-                                            </td> -->
+                                           
                                             <td>
                                                 <div class="product-shopping-cart-total-price">
                                                     Rs: {{$p->price}}
                                                     <button type="button" class="close" aria-label="Close">
-                                                        <!-- <span aria-hidden="true">×</span> -->
+                                                       
                                                     </button>
                                                 </div>
                                             </td>

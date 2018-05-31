@@ -100,7 +100,7 @@ class MainController extends Controller {
     }
 
     public function details($id) {
-        $data = \App\product::where('id', '=', $id)->first();
+        $data = \App\Product::where('id', '=', $id)->first();
         return view('details', compact('data'));
     }
 
@@ -113,7 +113,7 @@ class MainController extends Controller {
     }
 
     public function show() {
-        $prodct = \App\Product::all();
+        $prodct =Product::orderBy('created_at','desc')->paginate(12);
         return view('Mainpage', compact('prodct'));
     }
 
@@ -147,6 +147,9 @@ class MainController extends Controller {
         $product->OS = $request->input('OS');
         $product->Protection = $request->input('Protection');
         $product->SIM = $request->input('SIM');
+         $product->flipcart = $request->input('flipcart');
+        $product->drazpk = $request->input('drazpk');
+        $product->ebay = $request->input('ebay');
         $product->Dimensions = $request->input('Dimensions');
         $product->Primary = $request->input('Primary');
         $product->Front = $request->input('Front');

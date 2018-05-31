@@ -49,7 +49,7 @@
                      </div>
                      <form method="POST" action="{{url('/filter')}}">
                      {{ csrf_field() }}
-                     <?php $products= DB::table('products')->paginate(15);  ?>
+                     
                      <div class="sidebar-content">
                         <div class="brandscroll">
                            <?php
@@ -119,6 +119,7 @@
                                        <a href="{{route('details',['id'=>$book->id])}}">
                                        <div class="product-name">
                                              <label value="{{$book->brand_id}}"> 
+                                                
                                                 <?php
                                                    $productName = DB::table('brands')->where('id', '=', $book->brand_id)->get();
                                                    echo $productName[0]->brand_name;
@@ -139,14 +140,16 @@
                            @endforeach
                         </div>
                      </div>
-
+                     
                   </div>
                </div>
             </div>
             <div class="col-sm-1"></div>
             <div class=" col-sm-10 pane2 clearfix">
-            
-               <div >{{ $products->links() }} </div>
+               <ul class="pager clearfix">
+                 
+               </ul>
+               <div >{!! $prodct->render() !!}</div>
             </div>
          </div>
       </div>

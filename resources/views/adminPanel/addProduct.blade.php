@@ -78,20 +78,49 @@
 										</div>
 									</div>
 								</div>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<label class="control-label mb-10"><strong>Daraz Price</strong></label>
+											<input type="text" id="price" name="drazpk" class="form-control" placeholder="Enter Daraz price">
+										</div>
+									</div>
+
+									<div class="col-md-6">
+										<div class="form-group">
+											<label class="control-label mb-10"><strong>FlipCart Price</strong></label>
+											<input type="text" id="price" name="drazpk" class="form-control" placeholder="Enter FlipCart price">
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<label class="control-label mb-10"><strong>Ebay Price</strong></label>
+											<input type="text" id="price" name="ebay" class="form-control" placeholder="Enter Ebay price">
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label for="FormControlFile" class="control-label mb-10"><strong>Product Image</strong></label>
+											<input type="file" id="image" name="image" class="form-control-file">
+										</div>
+									</div>	
+								</div>
 								<?php $photo=\App\photo::all() ?>
 								<div class="row">
 									<div class="col-md-6">
 										<div class="form-group">
-											<label class="control-label mb-10"><strong>Images</strong></label>
+											<label class="control-label mb-10"><strong>Slider Image</strong></label>
 											<select class="form-control ProductCategory" id="ProductCategory" data-placeholder="Choose a Category" tabindex="1" name="image_id">
+												<option selected disabled>Select slider images</option>
 												@foreach($photo as $p)
                                                 <option value="{{$p->id}}">{{$p->img_name}}</option>
                                                  @endforeach   
 											</select>
 										</div>
 									</div>
-										<input type="file" class="form-control-file" id="image" name="image">
-									</div>
+								</div>
 								<div class="seprator-block"></div>
 								<h5 class="txt-dark capitalize-font">Display</h5>
 								<hr class="light-grey-hr"/>
